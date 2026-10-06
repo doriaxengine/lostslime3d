@@ -1,0 +1,26 @@
+name: Build Artifacts
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    uses: doriaxengine/doriax-project-example-ci/.github/workflows/build-project.yml@v2
+    with:
+      title: Lost Slime 3D
+      subtitle: Pick up every coin to open the portal and find the hidden gems.
+      description: A small 3D platformer made with Doriax Engine. Help the slime across two floating-island courses, pick up every coin to open the portal at the end and keep away from saws, spikes and the edge.
+      controls: |
+        Move [W] [A] [S] [D] or gamepad
+        Jump [Space]
+        Run [Shift]
+        Camera [Q] [E] or drag the mouse
+        Pause [Esc] [P]
+        On phones, use the on-screen controls

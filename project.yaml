@@ -1,0 +1,36 @@
+name: LostSlime3D
+canvasWidth: 1280
+canvasHeight: 720
+scalingMode: fitwidth
+textureStrategy: none
+vsync: true
+windowMode: windowed
+windowWidth: 1280
+windowHeight: 720
+windowResizable: true
+windowTitle: Lost Slime 3D
+assetsDir: assets
+luaDir: .
+scriptDirs:
+  - scripts
+application:
+  name: Lost Slime 3D
+  identifier: org.doriax.lostslime3d
+  version: 1.0.0
+web:
+  hideEmscriptenUI: true
+startSceneId: 613987680
+loading:
+  sceneId: 958305920
+  delay: 0.4
+  asyncLoading: true
+scenes:
+  - filepath: Intro Scene.scene
+  - filepath: Title Menu.scene
+  - filepath: Level One.scene
+  - filepath: Level Two.scene
+  - filepath: HUD Scene.scene
+  - filepath: Pause Scene.scene
+  - filepath: Game Over Scene.scene
+  - filepath: Win Scene.scene
+  - filepath: Loading Scene.scene

@@ -1,0 +1,167 @@
+type: Entity
+entity: 101
+name: Slime
+components:
+  transform:
+    position: [0, 0, 0]
+    rotation: [1, 0, 0, 0]
+    scale: [1, 1, 1]
+    worldPosition: [0, 0, 0]
+    worldRotation: [1, 0, 0, 0]
+    worldScale: [1, 1, 1]
+    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    visible: true
+    billboardRotation: [1, 0, 0, 0]
+    billboard: false
+    fakeBillboard: false
+    cylindricalBillboard: false
+  mesh:
+    submeshes: ~
+    normAdjustJoint: 1
+    normAdjustWeight: 1
+    aabb:
+      min: [0, 0, 0]
+      max: [0, 0, 0]
+    verticesAABB:
+      min: [0, 0, 0]
+      max: [0, 0, 0]
+    worldAABB:
+      min: [0, 0, 0]
+      max: [0, 0, 0]
+    receiveLights: true
+    receiveIBL: false
+    castShadows: true
+    receiveShadows: true
+    lodEnabled: true
+    lodBias: 1
+    renderInReflectionProbes: true
+    shadowsBillboard: true
+    transparent: false
+    cullingMode: back
+    windingOrder: ccw
+  script:
+    scripts:
+      - type: cpp
+        path: scripts/PlayerController.cpp
+        headerPath: scripts/PlayerController.h
+        className: PlayerController
+        enabled: true
+        properties:
+          - name: moveSpeed
+            displayName: Move Speed
+            type: Float
+            value: 6.5
+            defaultValue: 6.5
+          - name: sprintSpeed
+            displayName: Sprint Speed
+            type: Float
+            value: 9.5
+            defaultValue: 9.5
+          - name: jumpSpeed
+            displayName: Jump Speed
+            type: Float
+            value: 9
+            defaultValue: 9
+          - name: acceleration
+            displayName: Acceleration
+            type: Float
+            value: 18
+            defaultValue: 18
+          - name: airControl
+            displayName: Air Control
+            type: Float
+            value: 0.55
+            defaultValue: 0.55
+          - name: turnSpeed
+            displayName: Turn Speed
+            type: Float
+            value: 14
+            defaultValue: 14
+          - name: coyoteTime
+            displayName: Coyote Time
+            type: Float
+            value: 0.12
+            defaultValue: 0.12
+          - name: jumpBuffer
+            displayName: Jump Buffer
+            type: Float
+            value: 0.15
+            defaultValue: 0.15
+          - name: jumpCut
+            displayName: Jump Cut
+            type: Float
+            value: 0.45
+            defaultValue: 0.45
+          - name: cameraYaw
+            displayName: Camera Yaw
+            type: Float
+            value: -90
+            defaultValue: -90
+          - name: cameraPitch
+            displayName: Camera Pitch
+            type: Float
+            value: -22
+            defaultValue: -22
+          - name: cameraDistance
+            displayName: Camera Distance
+            type: Float
+            value: 9
+            defaultValue: 9
+          - name: lookHeight
+            displayName: Look Height
+            type: Float
+            value: 1
+            defaultValue: 1
+          - name: cameraLag
+            displayName: Camera Lag
+            type: Float
+            value: 7
+            defaultValue: 7
+          - name: mouseSensitivity
+            displayName: Mouse Sensitivity
+            type: Float
+            value: 0.25
+            defaultValue: 0.25
+          - name: fallDeathY
+            displayName: Fall Death Y
+            type: Float
+            value: -12
+            defaultValue: -12
+  model:
+    filename: models/character-oopi.glb
+    skeleton: 0
+  body3d:
+    type: dynamic
+    motionQuality: discrete
+    sensor: false
+    gravityFactor: 1
+    buoyancy: 0
+    waterDrag: 0.5
+    waterAngularDrag: 0.01
+    allowedDOFs:
+      translationX: true
+      translationY: true
+      translationZ: true
+      rotationX: false
+      rotationY: false
+      rotationZ: false
+    numShapes: 1
+    shapes:
+      - type: capsule
+        position: [0, 0.46, 0]
+        rotation: [1, 0, 0, 0]
+        width: 1
+        height: 1
+        depth: 1
+        radius: 0.28
+        halfHeight: 0.18
+        topRadius: 0.28
+        bottomRadius: 0.28
+        density: 900
+        source: none
+        sourceEntity: 0
+        samplesSize: 0
+        vertices: ~
+        indices: ~

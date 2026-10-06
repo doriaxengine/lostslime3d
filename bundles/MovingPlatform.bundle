@@ -1,0 +1,120 @@
+type: EntityBundle
+members:
+  - type: Entity
+    entity: 221
+    name: Moving Platform
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      body3d:
+        type: kinematic
+        motionQuality: discrete
+        sensor: false
+        gravityFactor: 1
+        buoyancy: 0
+        waterDrag: 0.5
+        waterAngularDrag: 0.01
+        allowedDOFs:
+          translationX: true
+          translationY: true
+          translationZ: true
+          rotationX: true
+          rotationY: true
+          rotationZ: true
+        numShapes: 1
+        shapes:
+          - type: box
+            position: [0, 0.25, 0]
+            rotation: [1, 0, 0, 0]
+            width: 2
+            height: 0.5
+            depth: 2
+            radius: 0.5
+            halfHeight: 0.5
+            topRadius: 0.5
+            bottomRadius: 0.5
+            density: 1000
+            source: none
+            sourceEntity: 0
+            samplesSize: 0
+            vertices: ~
+            indices: ~
+    children:
+      - type: Entity
+        entity: 222
+        name: Visual
+        components:
+          transform:
+            position: [0, 0, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [2, 1.6, 2]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          mesh:
+            submeshes: ~
+            normAdjustJoint: 1
+            normAdjustWeight: 1
+            aabb:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            verticesAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            worldAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            receiveLights: true
+            receiveIBL: false
+            castShadows: true
+            receiveShadows: true
+            lodEnabled: true
+            lodBias: 1
+            renderInReflectionProbes: true
+            shadowsBillboard: true
+            transparent: false
+            cullingMode: back
+            windingOrder: ccw
+          model:
+            filename: models/block-moving-large.glb
+            skeleton: 0
+  - type: Entity
+    entity: 1001
+    name: Platform Path
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 1
+        randomStart: false
+        target: 221
+        ownedTarget: false
+      timedaction:
+        duration: 2
+        loop: true
+        pingPong: true
+        function: SINE_IN_OUT
+      positionaction:
+        endPosition: [0, 0, 2]
+        startPosition: [0, 0, -2]

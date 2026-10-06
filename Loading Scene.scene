@@ -1,0 +1,582 @@
+id: 958305920
+name: Loading Scene
+scene:
+  backgroundColor: [0.525, 0.525, 0.525, 1]
+  shadowQuality: low
+  meshLodEnabled: false
+  meshLodThreshold: 1
+  depthPrepassEnabled: false
+  lightState: off
+  globalIlluminationIntensity: 0.1
+  globalIlluminationColor: [1, 1, 1]
+  ambientLight2DIntensity: 1
+  ambientLight2DColor: [1, 1, 1]
+  shadow2DQuality: low
+  ssaoEnabled: false
+  ssaoRadius: 0.5
+  ssaoIntensity: 1
+  ssaoBias: 0.025
+  ssrEnabled: false
+  ssrMaxDistance: 8
+  ssrThickness: 0.5
+  ssrMaxSteps: 48
+  ssrIntensity: 1
+  ssrBlur: 0
+  gravity2D: [0, -9.81]
+  gravity3D: [0, -9.81, 0]
+  fixedResolutionEnabled: false
+  fixedResolutionWidth: 640
+  fixedResolutionHeight: 360
+  fixedResolutionFilter: nearest
+  enableUIEvents: not_set
+sceneType: scene_ui
+mainCamera: 0
+maxValues:
+  maxSubmeshes: 0
+  maxTilemapTilesRect: 0
+  maxTilemapTiles: 0
+  maxExternalBuffers: 0
+  maxSpriteFrames: 0
+  maxBones: 0
+  maxShapes2D: 0
+  maxShapePoints2D: 0
+  maxShapes3D: 0
+  maxShapeVertices3D: 0
+  maxShapeIndices3D: 0
+shaderKeys:
+  - type: ui
+    properties: 2
+  - type: ui
+    properties: 8
+  - type: ui
+    properties: 9
+  - type: blit
+cppScripts:
+  - path: scripts/LoadingScreen.cpp
+    headerPath: scripts/LoadingScreen.h
+    className: LoadingScreen
+    properties:
+      - name: backdrop
+        isPtr: true
+        ptrTypeName: doriax::Image
+      - name: slime
+        isPtr: true
+        ptrTypeName: doriax::Image
+      - name: titleText
+        isPtr: true
+        ptrTypeName: doriax::Text
+      - name: statusText
+        isPtr: true
+        ptrTypeName: doriax::Text
+      - name: bar
+        isPtr: true
+        ptrTypeName: doriax::Image
+      - name: barFill
+        isPtr: true
+        ptrTypeName: doriax::Image
+      - name: barWidth
+        isPtr: false
+      - name: fadeOut
+        isPtr: false
+entities:
+  - type: Entity
+    entity: 1007
+    name: Loading
+    components:
+      script:
+        scripts:
+          - type: cpp
+            path: scripts/LoadingScreen.cpp
+            headerPath: scripts/LoadingScreen.h
+            className: LoadingScreen
+            enabled: true
+            properties:
+              - name: backdrop
+                displayName: Backdrop
+                type: EntityReference
+                ptrTypeName: doriax::Image
+                value: 1001
+                defaultValue: 0
+                sceneId: 958305920
+              - name: slime
+                displayName: Slime
+                type: EntityReference
+                ptrTypeName: doriax::Image
+                value: 1002
+                defaultValue: 0
+                sceneId: 958305920
+              - name: titleText
+                displayName: Title Text
+                type: EntityReference
+                ptrTypeName: doriax::Text
+                value: 1003
+                defaultValue: 0
+                sceneId: 958305920
+              - name: statusText
+                displayName: Status Text
+                type: EntityReference
+                ptrTypeName: doriax::Text
+                value: 1006
+                defaultValue: 0
+                sceneId: 958305920
+              - name: bar
+                displayName: Bar
+                type: EntityReference
+                ptrTypeName: doriax::Image
+                value: 1004
+                defaultValue: 0
+                sceneId: 958305920
+              - name: barFill
+                displayName: Bar Fill
+                type: EntityReference
+                ptrTypeName: doriax::Image
+                value: 1005
+                defaultValue: 0
+                sceneId: 958305920
+              - name: barWidth
+                displayName: Bar Width
+                type: Float
+                value: 360
+                defaultValue: 360
+              - name: fadeOut
+                displayName: Fade Out
+                type: Float
+                value: 0.3
+                defaultValue: 0.3
+  - type: Entity
+    entity: 1009
+    name: Hop
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 0
+        randomStart: false
+        target: 1002
+        ownedTarget: false
+      keyframetracks:
+        index: 0
+        interpolation: 0
+        loop: true
+        relative: true
+        times:
+          - 0
+          - 0.3141593
+          - 0.6283185
+        easings:
+          - SINE_OUT
+          - SINE_IN
+      translatetracks:
+        values:
+          - [0, 0, 0]
+          - [0, -28, 0]
+          - [0, 0, 0]
+  - type: Entity
+    entity: 1002
+    name: Slime
+    components:
+      transform:
+        position: [565, 215, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [565, 215, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [565, 215, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [565, 215, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [150, 150, 0]
+        worldAABB:
+          min: [565, 215, 0]
+          max: [715, 365, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: ui/slime.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 150
+        height: 150
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -75
+        anchorOffsetTop: -75
+        anchorOffsetRight: 75
+        anchorOffsetBottom: 75
+        positionOffset: [0, -70]
+        pivot: [0, 0]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [510.56677, 333.84732, 84.67108, 84.67108]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 0
+        patchMarginRight: 0
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
+  - type: Entity
+    entity: 1001
+    name: Backdrop
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [1280, 720, 0]
+        worldAABB:
+          min: [0, 0, 0]
+          max: [1280, 720, 0]
+        texture: ~
+        color: [0.015208514, 0.039546236, 0.02518686, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 1280
+        height: 720
+        anchorPointLeft: 0
+        anchorPointTop: 0
+        anchorPointRight: 1
+        anchorPointBottom: 1
+        anchorOffsetLeft: 0
+        anchorOffsetTop: 0
+        anchorOffsetRight: 0
+        anchorOffsetBottom: 0
+        positionOffset: [0, 0]
+        pivot: [0, 0]
+        anchorPreset: FULL_LAYOUT
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [191.63902, 212.48546, 722.52655, 406.42114]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 0
+        patchMarginRight: 0
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
+  - type: Entity
+    entity: 1003
+    name: Title Text
+    components:
+      transform:
+        position: [537, 377, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [537, 377, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [537, 377, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [537, 377, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [206, 39.969433, 0]
+        worldAABB:
+          min: [537, 377, 0]
+          max: [743, 416.96942, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: fonts/TitanOne-Regular.ttf|46#8
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 206
+        height: 46
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -103
+        anchorOffsetTop: -23
+        anchorOffsetRight: 103
+        anchorOffsetBottom: 23
+        positionOffset: [0, 40]
+        pivot: [0, 0]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [0, 0, 0, 0]
+        ignoreScissor: false
+        ignoreEvents: true
+      text:
+        font: [fonts/TitanOne-Regular.ttf]
+        text: Level One
+        fontSize: 46
+        multiline: false
+        maxTextSize: 64
+        fixedWidth: false
+        fixedHeight: false
+        pivotBaseline: false
+        pivotCentered: false
+  - type: Entity
+    entity: 1004
+    name: Bar
+    components:
+      transform:
+        position: [460, 454, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [460, 454, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [460, 454, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [460, 454, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [360, 32, 0]
+        worldAABB:
+          min: [460, 454, 0]
+          max: [820, 486, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: ui/progress_track.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 360
+        height: 32
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -180
+        anchorOffsetTop: -16
+        anchorOffsetRight: 180
+        anchorOffsetBottom: 16
+        positionOffset: [0, 110]
+        pivot: [0, 0]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [460.32858, 468.75662, 185.14743, 18.06314]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 16
+        patchMarginRight: 16
+        patchMarginTop: 0
+        patchMarginBottom: 0
+        textureScaleFactor: 0
+    children:
+      - type: Entity
+        entity: 1005
+        name: Bar Fill
+        components:
+          transform:
+            position: [0, 0, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [460, 454, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [460, 454, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          ui:
+            primitiveType: triangles
+            vertexCount: 54
+            aabb:
+              min: [0, 0, 0]
+              max: [32, 32, 0]
+            worldAABB:
+              min: [460, 454, 0]
+              max: [492, 486, 0]
+            texture:
+              textureType: 2D
+              source: path
+              path: ui/progress_green.png
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: true
+            color: [1, 1, 1, 1]
+            automaticFlipY: true
+            flipY: false
+            pointerMoved: false
+            focused: false
+          uilayout:
+            width: 32
+            height: 32
+            anchorPointLeft: 0
+            anchorPointTop: 0.5
+            anchorPointRight: 0
+            anchorPointBottom: 0.5
+            anchorOffsetLeft: 0
+            anchorOffsetTop: -16
+            anchorOffsetRight: 32
+            anchorOffsetBottom: 16
+            positionOffset: [0, 0]
+            pivot: [0, 0]
+            anchorPreset: CENTER_LEFT
+            usingAnchors: true
+            panel: 0
+            containerBoxIndex: -1
+            scissor: [460.32858, 468.75662, 0, 18.06314]
+            ignoreScissor: true
+            ignoreEvents: true
+          image:
+            patchMarginLeft: 16
+            patchMarginRight: 16
+            patchMarginTop: 0
+            patchMarginBottom: 0
+            textureScaleFactor: 0
+  - type: Entity
+    entity: 1006
+    name: Status Text
+    components:
+      transform:
+        position: [602, 504, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [602, 504, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [602, 504, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [602, 504, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 60
+        aabb:
+          min: [0, 0, 0]
+          max: [76, 23.428917, 0]
+        worldAABB:
+          min: [602, 504, 0]
+          max: [678, 527.4289, 0]
+        texture:
+          textureType: 2D
+          source: id
+          id: fonts/Sniglet-Regular.ttf|24#9
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: false
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 76
+        height: 24
+        anchorPointLeft: 0.5
+        anchorPointTop: 0.5
+        anchorPointRight: 0.5
+        anchorPointBottom: 0.5
+        anchorOffsetLeft: -38
+        anchorOffsetTop: -12
+        anchorOffsetRight: 38
+        anchorOffsetBottom: 12
+        positionOffset: [0, 156]
+        pivot: [0, 0]
+        anchorPreset: CENTER
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [0, 0, 0, 0]
+        ignoreScissor: false
+        ignoreEvents: true
+      text:
+        font: [fonts/Sniglet-Regular.ttf]
+        text: Loading...
+        fontSize: 24
+        multiline: false
+        maxTextSize: 64
+        fixedWidth: false
+        fixedHeight: false
+        pivotBaseline: false
+        pivotCentered: false

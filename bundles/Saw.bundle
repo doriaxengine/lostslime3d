@@ -1,0 +1,150 @@
+type: EntityBundle
+members:
+  - type: Entity
+    entity: 181
+    name: Saw
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      script:
+        scripts:
+          - type: cpp
+            path: scripts/Hazard.cpp
+            headerPath: scripts/Hazard.h
+            className: Hazard
+            enabled: true
+      body3d:
+        type: kinematic
+        motionQuality: discrete
+        sensor: true
+        gravityFactor: 1
+        buoyancy: 0
+        waterDrag: 0.5
+        waterAngularDrag: 0.01
+        allowedDOFs:
+          translationX: true
+          translationY: true
+          translationZ: true
+          rotationX: true
+          rotationY: true
+          rotationZ: true
+        numShapes: 1
+        shapes:
+          - type: sphere
+            position: [0, 0.45, 0]
+            rotation: [1, 0, 0, 0]
+            width: 1
+            height: 1
+            depth: 1
+            radius: 0.45
+            halfHeight: 0.5
+            topRadius: 0.5
+            bottomRadius: 0.5
+            density: 1000
+            source: none
+            sourceEntity: 0
+            samplesSize: 0
+            vertices: ~
+            indices: ~
+    children:
+      - type: Entity
+        entity: 182
+        name: Visual
+        components:
+          transform:
+            position: [0, 0.45, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1.1, 1.1, 1.1]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          mesh:
+            submeshes: ~
+            normAdjustJoint: 1
+            normAdjustWeight: 1
+            aabb:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            verticesAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            worldAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            receiveLights: true
+            receiveIBL: false
+            castShadows: true
+            receiveShadows: true
+            lodEnabled: true
+            lodBias: 1
+            renderInReflectionProbes: true
+            shadowsBillboard: true
+            transparent: false
+            cullingMode: back
+            windingOrder: ccw
+          model:
+            filename: models/saw.glb
+            skeleton: 0
+  - type: Entity
+    entity: 1001
+    name: Blade Turn
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 0
+        randomStart: false
+        target: 182
+        ownedTarget: false
+      timedaction:
+        duration: 0.7
+        loop: true
+        pingPong: false
+        function: LINEAR
+      rotationaction:
+        endRotation: [1, 0, 0, 0]
+        startRotation: [1, 0, 0, 0]
+        shortestPath: false
+        spin: true
+        axis: [0, 0, 1]
+        angle: 360
+  - type: Entity
+    entity: 1002
+    name: Patrol Path
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 0.875
+        randomStart: false
+        target: 181
+        ownedTarget: false
+      timedaction:
+        duration: 1.75
+        loop: true
+        pingPong: true
+        function: SINE_IN_OUT
+      positionaction:
+        endPosition: [0, 0, 1.2]
+        startPosition: [0, 0, -1.2]

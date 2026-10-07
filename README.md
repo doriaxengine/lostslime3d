@@ -38,6 +38,8 @@ also appear after touching the screen on any device, and hide again when a key i
   them to see them in Properties). The portal opening and the HUD banner are Animation
   entities (open them in the Animation window) that scripts start. The menu buttons grow
   on hover through their Button settings.
+- Particles: the slime's dust on jumps and landings is the `Dust Emitter` particles action of
+  the Player bundle, drawing each puff as an instance of the `Dust` mesh.
 
 The best score is saved with `System::setIntegerForKey`.
 
@@ -48,5 +50,5 @@ UI Pack - Adventure, Mobile Controls, Skyboxes, Interface Sounds, Impact Sounds,
 Jingles and New Platformer Pack (the key icon and sounds). The Titan One and Sniglet fonts are
 under the SIL Open Font License. Licenses are in `assets/licenses/`.
 
-The logo and the HUD icons (renders of Platformer Kit models) were made for this game and are
-CC0 as well.
+The logo, the HUD icons (renders of Platformer Kit models) and the dust puff model were made
+for this game and are CC0 as well.

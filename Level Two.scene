@@ -114,6 +114,9 @@ cppScripts:
         isPtr: false
       - name: fallDeathY
         isPtr: false
+      - name: dust
+        isPtr: true
+        ptrTypeName: doriax::Particles
   - path: scripts/ExitPortal.cpp
     headerPath: scripts/ExitPortal.h
     className: ExitPortal

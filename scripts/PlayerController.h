@@ -2,6 +2,7 @@
 
 #include "ScriptBase.h"
 #include "ScriptProperty.h"
+#include "Particles.h"
 #include "Vector2.h"
 #include "Vector3.h"
 
@@ -63,6 +64,9 @@ public:
     DPROPERTY("Fall Death Y")
     float fallDeathY = -12.0f;
 
+    DPROPERTY("Dust")
+    doriax::Particles* dust = nullptr;   // puffs at the feet on jumps and landings
+
     PlayerController(doriax::Scene* scene, doriax::Entity entity);
     virtual ~PlayerController();
 
@@ -80,6 +84,7 @@ private:
     void updateCamera(float dt);
     void updateAnimation(bool moving, bool sprinting);
     void play(const std::string& name, bool loop);
+    void emitDust();
 
     doriax::PhysicsSystem* physics = nullptr;
     bool started = false;

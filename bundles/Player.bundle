@@ -1,167 +1,358 @@
-type: Entity
-entity: 101
-name: Slime
-components:
-  transform:
-    position: [0, 0, 0]
-    rotation: [1, 0, 0, 0]
-    scale: [1, 1, 1]
-    worldPosition: [0, 0, 0]
-    worldRotation: [1, 0, 0, 0]
-    worldScale: [1, 1, 1]
-    localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-    modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-    normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-    visible: true
-    billboardRotation: [1, 0, 0, 0]
-    billboard: false
-    fakeBillboard: false
-    cylindricalBillboard: false
-  mesh:
-    submeshes: ~
-    normAdjustJoint: 1
-    normAdjustWeight: 1
-    aabb:
-      min: [0, 0, 0]
-      max: [0, 0, 0]
-    verticesAABB:
-      min: [0, 0, 0]
-      max: [0, 0, 0]
-    worldAABB:
-      min: [0, 0, 0]
-      max: [0, 0, 0]
-    receiveLights: true
-    receiveIBL: false
-    castShadows: true
-    receiveShadows: true
-    lodEnabled: true
-    lodBias: 1
-    renderInReflectionProbes: true
-    shadowsBillboard: true
-    transparent: false
-    cullingMode: back
-    windingOrder: ccw
-  script:
-    scripts:
-      - type: cpp
-        path: scripts/PlayerController.cpp
-        headerPath: scripts/PlayerController.h
-        className: PlayerController
-        enabled: true
-        properties:
-          - name: moveSpeed
-            displayName: Move Speed
-            type: Float
-            value: 6.5
-            defaultValue: 6.5
-          - name: sprintSpeed
-            displayName: Sprint Speed
-            type: Float
-            value: 9.5
-            defaultValue: 9.5
-          - name: jumpSpeed
-            displayName: Jump Speed
-            type: Float
-            value: 9
-            defaultValue: 9
-          - name: acceleration
-            displayName: Acceleration
-            type: Float
-            value: 18
-            defaultValue: 18
-          - name: airControl
-            displayName: Air Control
-            type: Float
-            value: 0.55
-            defaultValue: 0.55
-          - name: turnSpeed
-            displayName: Turn Speed
-            type: Float
-            value: 14
-            defaultValue: 14
-          - name: coyoteTime
-            displayName: Coyote Time
-            type: Float
-            value: 0.12
-            defaultValue: 0.12
-          - name: jumpBuffer
-            displayName: Jump Buffer
-            type: Float
-            value: 0.15
-            defaultValue: 0.15
-          - name: jumpCut
-            displayName: Jump Cut
-            type: Float
-            value: 0.45
-            defaultValue: 0.45
-          - name: cameraYaw
-            displayName: Camera Yaw
-            type: Float
-            value: -90
-            defaultValue: -90
-          - name: cameraPitch
-            displayName: Camera Pitch
-            type: Float
-            value: -22
-            defaultValue: -22
-          - name: cameraDistance
-            displayName: Camera Distance
-            type: Float
-            value: 9
-            defaultValue: 9
-          - name: lookHeight
-            displayName: Look Height
-            type: Float
-            value: 1
-            defaultValue: 1
-          - name: cameraLag
-            displayName: Camera Lag
-            type: Float
-            value: 7
-            defaultValue: 7
-          - name: mouseSensitivity
-            displayName: Mouse Sensitivity
-            type: Float
-            value: 0.25
-            defaultValue: 0.25
-          - name: fallDeathY
-            displayName: Fall Death Y
-            type: Float
-            value: -12
-            defaultValue: -12
-  model:
-    filename: models/character-oopi.glb
-    skeleton: 0
-  body3d:
-    type: dynamic
-    motionQuality: discrete
-    sensor: false
-    gravityFactor: 1
-    buoyancy: 0
-    waterDrag: 0.5
-    waterAngularDrag: 0.01
-    allowedDOFs:
-      translationX: true
-      translationY: true
-      translationZ: true
-      rotationX: false
-      rotationY: false
-      rotationZ: false
-    numShapes: 1
-    shapes:
-      - type: capsule
-        position: [0, 0.46, 0]
+type: EntityBundle
+members:
+  - type: Entity
+    entity: 101
+    name: Slime
+    components:
+      transform:
+        position: [0, 0, 0]
         rotation: [1, 0, 0, 0]
-        width: 1
-        height: 1
-        depth: 1
-        radius: 0.28
-        halfHeight: 0.18
-        topRadius: 0.28
-        bottomRadius: 0.28
-        density: 900
-        source: none
-        sourceEntity: 0
-        samplesSize: 0
-        vertices: ~
-        indices: ~
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      mesh:
+        submeshes: ~
+        normAdjustJoint: 1
+        normAdjustWeight: 1
+        aabb:
+          min: [0, 0, 0]
+          max: [0, 0, 0]
+        verticesAABB:
+          min: [0, 0, 0]
+          max: [0, 0, 0]
+        worldAABB:
+          min: [0, 0, 0]
+          max: [0, 0, 0]
+        receiveLights: true
+        receiveIBL: false
+        castShadows: true
+        receiveShadows: true
+        lodEnabled: true
+        lodBias: 1
+        renderInReflectionProbes: true
+        shadowsBillboard: true
+        transparent: false
+        cullingMode: back
+        windingOrder: ccw
+      script:
+        scripts:
+          - type: cpp
+            path: scripts/PlayerController.cpp
+            headerPath: scripts/PlayerController.h
+            className: PlayerController
+            enabled: true
+            properties:
+              - name: moveSpeed
+                displayName: Move Speed
+                type: Float
+                value: 6.5
+                defaultValue: 6.5
+              - name: sprintSpeed
+                displayName: Sprint Speed
+                type: Float
+                value: 9.5
+                defaultValue: 9.5
+              - name: jumpSpeed
+                displayName: Jump Speed
+                type: Float
+                value: 9
+                defaultValue: 9
+              - name: acceleration
+                displayName: Acceleration
+                type: Float
+                value: 18
+                defaultValue: 18
+              - name: airControl
+                displayName: Air Control
+                type: Float
+                value: 0.55
+                defaultValue: 0.55
+              - name: turnSpeed
+                displayName: Turn Speed
+                type: Float
+                value: 14
+                defaultValue: 14
+              - name: coyoteTime
+                displayName: Coyote Time
+                type: Float
+                value: 0.12
+                defaultValue: 0.12
+              - name: jumpBuffer
+                displayName: Jump Buffer
+                type: Float
+                value: 0.15
+                defaultValue: 0.15
+              - name: jumpCut
+                displayName: Jump Cut
+                type: Float
+                value: 0.45
+                defaultValue: 0.45
+              - name: cameraYaw
+                displayName: Camera Yaw
+                type: Float
+                value: -90
+                defaultValue: -90
+              - name: cameraPitch
+                displayName: Camera Pitch
+                type: Float
+                value: -22
+                defaultValue: -22
+              - name: cameraDistance
+                displayName: Camera Distance
+                type: Float
+                value: 9
+                defaultValue: 9
+              - name: lookHeight
+                displayName: Look Height
+                type: Float
+                value: 1
+                defaultValue: 1
+              - name: cameraLag
+                displayName: Camera Lag
+                type: Float
+                value: 7
+                defaultValue: 7
+              - name: mouseSensitivity
+                displayName: Mouse Sensitivity
+                type: Float
+                value: 0.25
+                defaultValue: 0.25
+              - name: fallDeathY
+                displayName: Fall Death Y
+                type: Float
+                value: -12
+                defaultValue: -12
+              - name: dust
+                displayName: Dust
+                type: EntityReference
+                ptrTypeName: doriax::Particles
+                value: 103
+                defaultValue: 0
+      model:
+        filename: models/character-oopi.glb
+        skeleton: 0
+      body3d:
+        type: dynamic
+        motionQuality: discrete
+        sensor: false
+        gravityFactor: 1
+        buoyancy: 0
+        waterDrag: 0.5
+        waterAngularDrag: 0.01
+        allowedDOFs:
+          translationX: true
+          translationY: true
+          translationZ: true
+          rotationX: false
+          rotationY: false
+          rotationZ: false
+        numShapes: 1
+        shapes:
+          - type: capsule
+            position: [0, 0.46, 0]
+            rotation: [1, 0, 0, 0]
+            width: 1
+            height: 1
+            depth: 1
+            radius: 0.28
+            halfHeight: 0.18
+            topRadius: 0.28
+            bottomRadius: 0.28
+            density: 900
+            source: none
+            sourceEntity: 0
+            samplesSize: 0
+            vertices: ~
+            indices: ~
+    children:
+      - type: Entity
+        entity: 102
+        name: Dust
+        components:
+          transform:
+            position: [0, 0, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          mesh:
+            submeshes: ~
+            normAdjustJoint: 1
+            normAdjustWeight: 1
+            aabb:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            verticesAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            worldAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            receiveLights: true
+            receiveIBL: false
+            castShadows: false
+            receiveShadows: true
+            lodEnabled: true
+            lodBias: 1
+            renderInReflectionProbes: true
+            shadowsBillboard: true
+            transparent: false
+            cullingMode: back
+            windingOrder: ccw
+          model:
+            filename: models/dust.glb
+            skeleton: 0
+          instancedmesh:
+            maxInstances: 12
+            instancedBillboard: false
+            instancedCylindricalBillboard: false
+      - type: Entity
+        entity: 103
+        name: Dust Emitter
+        components:
+          transform:
+            position: [0, 0, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          action:
+            state: Stopped
+            speed: 1
+            startOffset: 0
+            randomStart: false
+            target: 102
+            ownedTarget: false
+          particles:
+            maxParticles: 12
+            emitter: true
+            loop: false
+            localSpace: false
+            rate: 0
+            maxPerUpdate: 12
+            bursts:
+              - time: 0
+                minCount: 8
+                maxCount: 10
+            lifeInitializer:
+              minLife: 0.4
+              maxLife: 0.5
+            positionInitializer:
+              shape: Box
+              minPosition: [-0.25, 0.05, -0.25]
+              maxPosition: [0.25, 0.15, 0.25]
+              radius: 1
+              innerRadius: 0
+              coneAngle: 30
+              coneHeight: 1
+            positionModifier:
+              fromTime: 0
+              toTime: 0
+              fromPosition: [0, 0, 0]
+              toPosition: [0, 0, 0]
+              function: LINEAR
+            velocityInitializer:
+              minVelocity: [-1.6, 0.3, -1.6]
+              maxVelocity: [1.6, 1, 1.6]
+            velocityModifier:
+              fromTime: 0
+              toTime: 0
+              fromVelocity: [0, 0, 0]
+              toVelocity: [0, 0, 0]
+              function: LINEAR
+            accelerationInitializer:
+              minAcceleration: [0, 0, 0]
+              maxAcceleration: [0, 0, 0]
+            accelerationModifier:
+              fromTime: 0
+              toTime: 0
+              fromAcceleration: [0, 0, 0]
+              toAcceleration: [0, 0, 0]
+              function: LINEAR
+            colorInitializer:
+              minColor: [0.86, 0.82, 0.74]
+              maxColor: [0.97, 0.94, 0.88]
+              useSRGB: true
+            colorModifier:
+              fromTime: 0
+              toTime: 0
+              fromColor: [0, 0, 0]
+              toColor: [0, 0, 0]
+              function: LINEAR
+              useSRGB: true
+            colorGradient:
+              useSRGB: true
+              stops: ~
+            alphaInitializer:
+              minAlpha: 1
+              maxAlpha: 1
+            alphaModifier:
+              fromTime: 0
+              toTime: 0
+              fromAlpha: 0
+              toAlpha: 0
+              function: LINEAR
+            sizeInitializer:
+              minSize: 1
+              maxSize: 1
+            sizeModifier:
+              fromTime: 0
+              toTime: 0
+              fromSize: 0
+              toSize: 0
+              function: LINEAR
+            spriteInitializer:
+              frames: ~
+            spriteModifier:
+              fromTime: 0
+              toTime: 0
+              function: LINEAR
+              frames: ~
+            rotationInitializer:
+              minRotation: [1, 0, 0, 0]
+              maxRotation: [0, 0.57735, 0.57735, 0.57735]
+              shortestPath: false
+            rotationModifier:
+              fromTime: 0
+              toTime: 0
+              fromRotation: [1, 0, 0, 0]
+              toRotation: [1, 0, 0, 0]
+              function: LINEAR
+              shortestPath: false
+            scaleInitializer:
+              minScale: [0.32, 0.32, 0.32]
+              maxScale: [0.32, 0.32, 0.32]
+              linearSort: true
+            scaleModifier:
+              fromTime: 0
+              toTime: 0.5
+              fromScale: [0.32, 0.32, 0.32]
+              toScale: [0, 0, 0]
+              function: LINEAR

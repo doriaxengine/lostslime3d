@@ -177,6 +177,12 @@ void PlayerController::updateCamera(float dt) {
     camera.setTarget(target);
 }
 
+void PlayerController::emitDust() {
+    if (!dust) return;
+    dust->reset();
+    dust->start();
+}
+
 void PlayerController::updateAnimation(bool moving, bool sprinting) {
     if (dead) {
         play("die", false);
@@ -294,7 +300,10 @@ void PlayerController::onUpdate() {
 
     // only after a real fall, not when the contacts flicker
     fallSpeed = std::min(fallSpeed, body.getLinearVelocity().y);
-    if (grounded && !wasGrounded && fallSpeed < -LANDING_SPEED) playSound(scene, "Land Sound");
+    if (grounded && !wasGrounded && fallSpeed < -LANDING_SPEED) {
+        playSound(scene, "Land Sound");
+        emitDust();
+    }
     if (grounded) fallSpeed = 0.0f;
     wasGrounded = grounded;
 
@@ -325,6 +334,7 @@ void PlayerController::onUpdate() {
         jumpBufferTimer = 0.0f;
         coyoteTimer = 0.0f;
         jumpCutPending = true;
+        if (grounded) emitDust();
         grounded = false;
         onMovingGround = false;
         playSound(scene, "Jump Sound");

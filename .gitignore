@@ -3,6 +3,7 @@
 # Engine API snapshot, generated C++, build trees, this machine's build
 # settings and this user's editor workspace.
 .doriax/
+AGENTS.md
 
 # Regenerated on every build.
 /CMakeLists.txt

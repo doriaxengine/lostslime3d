@@ -25,6 +25,8 @@ using namespace doriax;
 
 static const float DEADZONE = 0.2f;
 static const float GROUND_NORMAL_Y = 0.64f; // slopes up to ~50 degrees
+static const float LEAVING_SPEED = 1.0f; // away from the ground, like a jump taking off
+static const float LANDING_SPEED = 2.0f; // slower falls land quietly
 
 PlayerController::PlayerController(Scene* scene, Entity entity): ScriptBase(scene, entity) {
     physics = scene->getSystem<PhysicsSystem>().get();
@@ -59,8 +61,12 @@ void PlayerController::play(const std::string& name, bool loop) {
 
 // the contact normal points from A to B
 void PlayerController::checkGround(Body3D& other, const Vector3& normal, bool isA) {
-    float up = isA ? -normal.y : normal.y;
-    if (up < GROUND_NORMAL_Y) return;
+    Vector3 up = isA ? -normal : normal;
+    if (up.y < GROUND_NORMAL_Y) return;
+
+    // the step a jump leaves the ground still touches it
+    Vector3 relative = Body3D(scene, entity).getLinearVelocity() - other.getLinearVelocity();
+    if (relative.dotProduct(up) > LEAVING_SPEED) return;
 
     grounded = true;
     coyoteTimer = coyoteTime;
@@ -188,6 +194,8 @@ void PlayerController::onUpdate() {
         started = true;
         yaw = cameraYaw;
         pitch = cameraPitch;
+        // a sleeping body reports no ground contacts
+        Body3D(scene, entity).setAllowSleeping(false);
     }
 
     Body3D body(scene, entity);
@@ -279,7 +287,10 @@ void PlayerController::onUpdate() {
         onMovingGround = false;
     }
 
-    if (grounded && !wasGrounded) playSound(scene, "Land Sound");
+    // only after a real fall, not when the contacts flicker
+    fallSpeed = std::min(fallSpeed, body.getLinearVelocity().y);
+    if (grounded && !wasGrounded && fallSpeed < -LANDING_SPEED) playSound(scene, "Land Sound");
+    if (grounded) fallSpeed = 0.0f;
     wasGrounded = grounded;
 
     if (jumpPressed && !jumpHeld) {

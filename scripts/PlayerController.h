@@ -98,6 +98,7 @@ private:
     bool jumpCutPending = false;
     bool grounded = false;
     bool wasGrounded = false;
+    float fallSpeed = 0.0f;
     bool dead = false;
     bool frozen = false;
 

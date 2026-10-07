@@ -37,10 +37,10 @@ members:
         numShapes: 1
         shapes:
           - type: box
-            position: [0, 0.25, 0]
+            position: [0, 0.4, 0]
             rotation: [1, 0, 0, 0]
             width: 2
-            height: 0.5
+            height: 0.8
             depth: 2
             radius: 0.5
             halfHeight: 0.5

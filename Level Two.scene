@@ -48,10 +48,14 @@ shaderKeys:
     properties: 33558874
   - type: mesh
     properties: 33567070
+  - type: mesh
+    properties: 33820760
   - type: sky
   - type: depth
   - type: depth
     properties: 2
+  - type: depth
+    properties: 64
   - type: blit
 childScenes:
   - id: 283394770
@@ -317,7 +321,7 @@ entities:
         path: bundles/Player.bundle
     bundleLocalEntities:
       - parentRegistryEntity: 101
-        childIndex: 0
+        childIndex: 2
   - type: Entity
     entity: 1007
     name: Portal
@@ -449,7 +453,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -534,7 +538,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -619,7 +623,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -704,7 +708,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -789,7 +793,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -874,7 +878,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -959,7 +963,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1044,7 +1048,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1129,7 +1133,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1214,7 +1218,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1299,7 +1303,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1384,7 +1388,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1469,7 +1473,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1554,7 +1558,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1639,7 +1643,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1724,7 +1728,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1809,7 +1813,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -1894,7 +1898,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2032,7 +2036,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2117,7 +2121,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2202,7 +2206,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2287,7 +2291,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2372,7 +2376,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2457,7 +2461,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2542,7 +2546,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2627,7 +2631,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2765,7 +2769,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2850,7 +2854,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -2935,7 +2939,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3020,7 +3024,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3105,7 +3109,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3190,7 +3194,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3275,7 +3279,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3360,7 +3364,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3445,7 +3449,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3530,7 +3534,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3615,7 +3619,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3700,7 +3704,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3785,7 +3789,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3870,7 +3874,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -3955,7 +3959,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4040,7 +4044,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4125,7 +4129,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4210,7 +4214,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4295,7 +4299,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4380,7 +4384,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4465,7 +4469,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4550,7 +4554,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4688,7 +4692,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4773,7 +4777,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4858,7 +4862,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -4943,7 +4947,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5081,7 +5085,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5166,7 +5170,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5251,7 +5255,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5336,7 +5340,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5421,7 +5425,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5506,7 +5510,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5591,7 +5595,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5676,7 +5680,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5761,7 +5765,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5846,7 +5850,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -5931,7 +5935,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6016,7 +6020,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6101,7 +6105,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6186,7 +6190,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6271,7 +6275,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6356,7 +6360,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6441,7 +6445,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6526,7 +6530,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6611,7 +6615,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6696,7 +6700,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6781,7 +6785,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6866,7 +6870,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -6951,7 +6955,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7036,7 +7040,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7174,7 +7178,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7259,7 +7263,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7397,7 +7401,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7482,7 +7486,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7567,7 +7571,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7652,7 +7656,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7737,7 +7741,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7822,7 +7826,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7907,7 +7911,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -7992,7 +7996,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8077,7 +8081,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8162,7 +8166,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8300,7 +8304,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8385,7 +8389,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8470,7 +8474,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8555,7 +8559,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8640,7 +8644,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8725,7 +8729,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8810,7 +8814,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8895,7 +8899,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -8980,7 +8984,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9065,7 +9069,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9150,7 +9154,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9235,7 +9239,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9320,7 +9324,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9405,7 +9409,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9490,7 +9494,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9575,7 +9579,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9660,7 +9664,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9745,7 +9749,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9830,7 +9834,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -9915,7 +9919,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -10000,7 +10004,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -10085,7 +10089,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -10170,7 +10174,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -10255,7 +10259,7 @@ entities:
                   name: ""
                 textureRect: [0, 0, 1, 1]
                 primitiveType: triangles
-                vertexCount: 276
+                vertexCount: 348
                 faceCulling: false
                 textureShadow: false
                 hasTexCoord1: true
@@ -10629,15 +10633,15 @@ entities:
     name: Spikes 1
     components:
       transform:
-        position: [27, 4, 2]
+        position: [26, 4, 2]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [27, 4, 2]
+        worldPosition: [26, 4, 2]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [27, 4, 2, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [27, 4, 2, 1]]
-        normalMatrix: [[1, 0, 0, -27], [0, 1, 0, -4], [0, 0, 1, -2], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [26, 4, 2, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [26, 4, 2, 1]]
+        normalMatrix: [[1, 0, 0, -26], [0, 1, 0, -4], [0, 0, 1, -2], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false
@@ -10651,37 +10655,15 @@ entities:
     name: Spikes 2
     components:
       transform:
-        position: [27, 4, 3]
+        position: [26, 4, 3]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [27, 4, 3]
+        worldPosition: [26, 4, 3]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [27, 4, 3, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [27, 4, 3, 1]]
-        normalMatrix: [[1, 0, 0, -27], [0, 1, 0, -4], [0, 0, 1, -3], [0, 0, 0, 1]]
-        visible: true
-        billboardRotation: [1, 0, 0, 0]
-        billboard: false
-        fakeBillboard: false
-        cylindricalBillboard: false
-      bundle:
-        name: Spikes
-        path: bundles/Spikes.bundle
-  - type: Entity
-    entity: 1169
-    name: Spikes 3
-    components:
-      transform:
-        position: [28, 4, 2.5]
-        rotation: [1, 0, 0, 0]
-        scale: [1, 1, 1]
-        worldPosition: [28, 4, 2.5]
-        worldRotation: [1, 0, 0, 0]
-        worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [28, 4, 2.5, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [28, 4, 2.5, 1]]
-        normalMatrix: [[1, 0, 0, -28], [0, 1, 0, -4], [0, 0, 1, -2.5], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [26, 4, 3, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [26, 4, 3, 1]]
+        normalMatrix: [[1, 0, 0, -26], [0, 1, 0, -4], [0, 0, 1, -3], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false
@@ -11696,15 +11678,15 @@ entities:
     name: crate
     components:
       transform:
-        position: [26.4, 4, 3]
+        position: [22.9, 3, 4]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [26.4, 4, 3]
+        worldPosition: [22.9, 3, 4]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [26.4, 4, 3, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [26.4, 4, 3, 1]]
-        normalMatrix: [[1, 0, 0, -26.4], [0, 1, 0, -4], [0, 0, 1, -3], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [22.9, 3, 4, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [22.9, 3, 4, 1]]
+        normalMatrix: [[1, 0, 0, -22.9], [0, 1, 0, -3], [0, 0, 1, -4], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false

@@ -61,6 +61,7 @@ void LevelController::countPickups() {
             if (entry.type == ScriptType::LUA || entry.className != "Collectible" || !entry.instance) continue;
 
             Collectible* item = static_cast<Collectible*>(entry.instance);
+            if (item->isKey()) continue;
             if (item->isGem()) {
                 gemsTotal++;
                 if (item->isCollected()) gems++;

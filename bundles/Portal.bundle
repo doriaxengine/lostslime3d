@@ -39,6 +39,12 @@ members:
                 ptrTypeName: doriax::Animation
                 value: 1008
                 defaultValue: 0
+              - name: lock
+                displayName: Lock
+                type: EntityReference
+                ptrTypeName: doriax::Object
+                value: 164
+                defaultValue: 0
               - name: openSpinSpeed
                 displayName: Open Spin Speed
                 type: Float
@@ -200,6 +206,52 @@ members:
             windingOrder: ccw
           model:
             filename: models/star.glb
+            skeleton: 0
+      - type: Entity
+        entity: 164
+        name: Lock
+        components:
+          transform:
+            position: [0, 0.3, 0]
+            rotation: [0.707107, 0, 0.707107, 0]
+            scale: [2.5, 2.5, 2.5]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          mesh:
+            submeshes: ~
+            normAdjustJoint: 1
+            normAdjustWeight: 1
+            aabb:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            verticesAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            worldAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            receiveLights: true
+            receiveIBL: false
+            castShadows: true
+            receiveShadows: true
+            lodEnabled: true
+            lodBias: 1
+            renderInReflectionProbes: true
+            shadowsBillboard: true
+            transparent: false
+            cullingMode: back
+            windingOrder: ccw
+          model:
+            filename: models/lock.glb
             skeleton: 0
   - type: Entity
     entity: 1001

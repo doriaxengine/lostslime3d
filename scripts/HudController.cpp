@@ -2,7 +2,14 @@
 
 #include "GameState.h"
 
+#include "Engine.h"
+
+#include <algorithm>
+
 using namespace doriax;
+
+static const float MESSAGE_TIME = 2.5f;
+static const float MESSAGE_FADE = 0.4f;
 
 HudController::HudController(Scene* scene, Entity entity): ScriptBase(scene, entity) {
     // the hearts are full in the scene
@@ -20,6 +27,13 @@ void HudController::showBanner(const std::string& text) {
     bannerText->setText(text);
     banner->setVisible(true);
     bannerAnimation->restart();
+}
+
+void HudController::showMessage(const std::string& text) {
+    if (!message || !messageText) return;
+    messageText->setText(text);
+    message->setVisible(true);
+    messageTimer = MESSAGE_TIME;
 }
 
 void HudController::onUpdate() {
@@ -46,6 +60,11 @@ void HudController::onUpdate() {
         gemText->setText(gems);
     }
 
+    if (keyIcon && GameState::hasKey != shownKey) {
+        shownKey = GameState::hasKey;
+        keyIcon->setColor(1.0f, 1.0f, 1.0f, shownKey ? 1.0f : 0.3f);
+    }
+
     if (scoreText && GameState::score != shownScore) {
         shownScore = GameState::score;
         scoreText->setText(std::to_string(shownScore));
@@ -56,8 +75,17 @@ void HudController::onUpdate() {
         if (!shownLevel.empty()) showBanner(shownLevel);
     }
 
-    if (GameState::isPortalOpen() != portalOpen) {
-        portalOpen = GameState::isPortalOpen();
-        if (portalOpen) showBanner("The portal is open!");
+    if (!GameState::message.empty()) {
+        showMessage(GameState::message);
+        GameState::message.clear();
+    }
+
+    if (messageTimer > 0.0f) {
+        messageTimer -= Engine::getDeltatime();
+        // fades out at the end
+        float alpha = std::clamp(messageTimer / MESSAGE_FADE, 0.0f, 1.0f);
+        message->setColor(1.0f, 1.0f, 1.0f, alpha);
+        messageText->setColor(1.0f, 1.0f, 1.0f, alpha);
+        if (messageTimer <= 0.0f) message->setVisible(false);
     }
 }

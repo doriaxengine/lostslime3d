@@ -28,6 +28,11 @@ void Collectible::collect() {
     if (collected) return;
     collected = true;
 
-    GameState::score += scoreValue;
-    playSound(scene, isGem() ? "Gem Sound" : "Coin Sound");
+    if (isKey()) {
+        GameState::hasKey = true;
+        playSound(scene, "Key Sound");
+    } else {
+        GameState::score += scoreValue;
+        playSound(scene, isGem() ? "Gem Sound" : "Coin Sound");
+    }
 }

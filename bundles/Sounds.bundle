@@ -126,3 +126,45 @@ members:
         attenuationModel: no_attenuation
         attenuationRolloffFactor: 1
         dopplerFactor: 1
+  - type: Entity
+    entity: 247
+    name: Key Sound
+    components:
+      sound:
+        state: stopped
+        filename: audio/key.ogg
+        enableClocked: false
+        volume: 0.7
+        speed: 1
+        pan: 0
+        looping: false
+        loopingPoint: 0
+        protectVoice: false
+        inaudibleBehaviorMustTick: false
+        inaudibleBehaviorKill: false
+        minDistance: 1
+        maxDistance: 1000
+        attenuationModel: no_attenuation
+        attenuationRolloffFactor: 1
+        dopplerFactor: 1
+  - type: Entity
+    entity: 248
+    name: Locked Sound
+    components:
+      sound:
+        state: stopped
+        filename: audio/locked.ogg
+        enableClocked: false
+        volume: 0.6
+        speed: 1
+        pan: 0
+        looping: false
+        loopingPoint: 0
+        protectVoice: false
+        inaudibleBehaviorMustTick: false
+        inaudibleBehaviorKill: false
+        minDistance: 1
+        maxDistance: 1000
+        attenuationModel: no_attenuation
+        attenuationRolloffFactor: 1
+        dopplerFactor: 1

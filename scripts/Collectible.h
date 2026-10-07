@@ -9,7 +9,7 @@
 class Collectible : public doriax::ScriptBase {
 public:
     DPROPERTY("Kind")
-    std::string kind = "coin";   // coin or gem
+    std::string kind = "coin";   // coin, gem or key
 
     DPROPERTY("Score Value")
     int scoreValue = 10;
@@ -21,6 +21,7 @@ public:
     void collect();
 
     bool isGem() const { return kind == "gem"; }
+    bool isKey() const { return kind == "key"; }
     bool isCollected() const { return collected; }
 
 private:

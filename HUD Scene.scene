@@ -71,6 +71,9 @@ cppScripts:
       - name: gemText
         isPtr: true
         ptrTypeName: doriax::Text
+      - name: keyIcon
+        isPtr: true
+        ptrTypeName: doriax::Image
       - name: scoreText
         isPtr: true
         ptrTypeName: doriax::Text
@@ -83,6 +86,12 @@ cppScripts:
       - name: bannerAnimation
         isPtr: true
         ptrTypeName: doriax::Animation
+      - name: message
+        isPtr: true
+        ptrTypeName: doriax::Image
+      - name: messageText
+        isPtr: true
+        ptrTypeName: doriax::Text
       - name: fullHeart
         isPtr: false
       - name: emptyHeart
@@ -153,6 +162,13 @@ entities:
                 value: 1025
                 defaultValue: 0
                 sceneId: 283394770
+              - name: keyIcon
+                displayName: Key Icon
+                type: EntityReference
+                ptrTypeName: doriax::Image
+                value: 1042
+                defaultValue: 0
+                sceneId: 283394770
               - name: scoreText
                 displayName: Score Text
                 type: EntityReference
@@ -179,6 +195,20 @@ entities:
                 type: EntityReference
                 ptrTypeName: doriax::Animation
                 value: 1040
+                defaultValue: 0
+                sceneId: 283394770
+              - name: message
+                displayName: Message
+                type: EntityReference
+                ptrTypeName: doriax::Image
+                value: 1043
+                defaultValue: 0
+                sceneId: 283394770
+              - name: messageText
+                displayName: Message Text
+                type: EntityReference
+                ptrTypeName: doriax::Text
+                value: 1044
                 defaultValue: 0
                 sceneId: 283394770
               - name: fullHeart
@@ -883,6 +913,143 @@ entities:
             pivotBaseline: false
             pivotCentered: false
   - type: Entity
+    entity: 1041
+    name: Key
+    components:
+      transform:
+        position: [20, 220, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [20, 220, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [20, 220, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [20, 220, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [72, 56, 0]
+        worldAABB:
+          min: [20, 220, 0]
+          max: [92, 276, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: ui/hud_plaque.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 72
+        height: 56
+        anchorPointLeft: 0
+        anchorPointTop: 0
+        anchorPointRight: 0
+        anchorPointBottom: 0
+        anchorOffsetLeft: 0
+        anchorOffsetTop: 0
+        anchorOffsetRight: 72
+        anchorOffsetBottom: 56
+        positionOffset: [20, 220]
+        pivot: [0, 0]
+        anchorPreset: TOP_LEFT
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [44, 244, 24, 8]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 24
+        patchMarginRight: 24
+        patchMarginTop: 24
+        patchMarginBottom: 24
+        textureScaleFactor: 0
+    children:
+      - type: Entity
+        entity: 1042
+        name: Key Icon
+        components:
+          transform:
+            position: [15, 7, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [35, 227, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [15, 7, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [35, 227, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          ui:
+            primitiveType: triangles
+            vertexCount: 54
+            aabb:
+              min: [0, 0, 0]
+              max: [42, 42, 0]
+            worldAABB:
+              min: [35, 227, 0]
+              max: [77, 269, 0]
+            texture:
+              textureType: 2D
+              source: path
+              path: ui/key.png
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: true
+            color: [1, 1, 1, 0.3]
+            automaticFlipY: true
+            flipY: false
+            pointerMoved: false
+            focused: false
+          uilayout:
+            width: 42
+            height: 42
+            anchorPointLeft: 0
+            anchorPointTop: 0.5
+            anchorPointRight: 0
+            anchorPointBottom: 0.5
+            anchorOffsetLeft: 0
+            anchorOffsetTop: -21
+            anchorOffsetRight: 42
+            anchorOffsetBottom: 21
+            positionOffset: [15, 0]
+            pivot: [0, 0]
+            anchorPreset: CENTER_LEFT
+            usingAnchors: true
+            panel: 0
+            containerBoxIndex: -1
+            scissor: [35, 227, 42, 42]
+            ignoreScissor: true
+            ignoreEvents: true
+          image:
+            patchMarginLeft: 0
+            patchMarginRight: 0
+            patchMarginTop: 0
+            patchMarginBottom: 0
+            textureScaleFactor: 0
+  - type: Entity
     entity: 1026
     name: Score
     components:
@@ -1226,6 +1393,147 @@ entities:
             font: [fonts/TitanOne-Regular.ttf]
             text: Verdant Rise
             fontSize: 36
+            multiline: false
+            maxTextSize: 64
+            fixedWidth: false
+            fixedHeight: false
+            pivotBaseline: false
+            pivotCentered: false
+  - type: Entity
+    entity: 1043
+    name: Message
+    components:
+      transform:
+        position: [420, 616, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [420, 616, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [420, 616, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [420, 616, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: false
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      ui:
+        primitiveType: triangles
+        vertexCount: 54
+        aabb:
+          min: [0, 0, 0]
+          max: [440, 64, 0]
+        worldAABB:
+          min: [420, 616, 0]
+          max: [860, 680, 0]
+        texture:
+          textureType: 2D
+          source: path
+          path: ui/hud_plaque.png
+          minFilter: linear
+          magFilter: linear
+          wrapU: repeat
+          wrapV: repeat
+          releaseDataAfterLoad: true
+        color: [1, 1, 1, 1]
+        automaticFlipY: true
+        flipY: false
+        pointerMoved: false
+        focused: false
+      uilayout:
+        width: 440
+        height: 64
+        anchorPointLeft: 0.5
+        anchorPointTop: 1
+        anchorPointRight: 0.5
+        anchorPointBottom: 1
+        anchorOffsetLeft: -220
+        anchorOffsetTop: -64
+        anchorOffsetRight: 220
+        anchorOffsetBottom: 0
+        positionOffset: [0, -40]
+        pivot: [0, 0]
+        anchorPreset: CENTER_BOTTOM
+        usingAnchors: true
+        panel: 0
+        containerBoxIndex: -1
+        scissor: [444, 640, 392, 16]
+        ignoreScissor: false
+        ignoreEvents: true
+      image:
+        patchMarginLeft: 24
+        patchMarginRight: 24
+        patchMarginTop: 24
+        patchMarginBottom: 24
+        textureScaleFactor: 0
+    children:
+      - type: Entity
+        entity: 1044
+        name: Message Text
+        components:
+          transform:
+            position: [75, 17, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1, 1, 1]
+            worldPosition: [495, 633, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [75, 17, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [495, 633, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          ui:
+            primitiveType: triangles
+            vertexCount: 72
+            aabb:
+              min: [0, 0, 0]
+              max: [290, 30, 0]
+            worldAABB:
+              min: [495, 633, 0]
+              max: [785, 663, 0]
+            texture:
+              textureType: 2D
+              source: id
+              id: fonts/TitanOne-Regular.ttf|30#5
+              minFilter: linear
+              magFilter: linear
+              wrapU: repeat
+              wrapV: repeat
+              releaseDataAfterLoad: false
+            color: [1, 1, 1, 1]
+            automaticFlipY: true
+            flipY: false
+            pointerMoved: false
+            focused: false
+          uilayout:
+            width: 290
+            height: 30
+            anchorPointLeft: 0.5
+            anchorPointTop: 0.5
+            anchorPointRight: 0.5
+            anchorPointBottom: 0.5
+            anchorOffsetLeft: -145
+            anchorOffsetTop: -15
+            anchorOffsetRight: 145
+            anchorOffsetBottom: 15
+            positionOffset: [0, 0]
+            pivot: [0, 0]
+            anchorPreset: CENTER
+            usingAnchors: true
+            panel: 0
+            containerBoxIndex: -1
+            scissor: [444, 640, 392, 16]
+            ignoreScissor: true
+            ignoreEvents: true
+          text:
+            font: [fonts/TitanOne-Regular.ttf]
+            text: Find the key first!
+            fontSize: 30
             multiline: false
             maxTextSize: 64
             fixedWidth: false

@@ -16,12 +16,14 @@ struct GameState {
     static int coinsTotal;
     static int gems;
     static int gemsTotal;
+    static bool hasKey; // opens the portal
     static bool paused;
 
     static std::string levelName;
     static std::string nextScene;
     static std::string lastLevelScene; // for retry
     static std::string loadingTitle;
+    static std::string message; // shown once at the bottom of the HUD
 
     // handled by LevelController
     static bool levelCompleteRequested;
@@ -34,8 +36,6 @@ struct GameState {
     static doriax::Vector2 touchMove; // stick, y up, length up to 1
     static doriax::Vector2 touchLook; // camera drag this frame
     static bool touchJump;
-
-    static bool isPortalOpen() { return coinsTotal > 0 && coins >= coinsTotal; }
 
     static void newGame();
     static void beginLevel(const std::string& sceneName, const std::string& displayName, const std::string& next);

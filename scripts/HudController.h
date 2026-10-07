@@ -25,6 +25,9 @@ public:
     DPROPERTY("Gem Text")
     doriax::Text* gemText = nullptr;
 
+    DPROPERTY("Key Icon")
+    doriax::Image* keyIcon = nullptr;   // faded until the key is taken
+
     DPROPERTY("Score Text")
     doriax::Text* scoreText = nullptr;
 
@@ -36,6 +39,12 @@ public:
 
     DPROPERTY("Banner Animation")
     doriax::Animation* bannerAnimation = nullptr;   // fades the banner in and out
+
+    DPROPERTY("Message")
+    doriax::Image* message = nullptr;   // hints at the bottom, the banner is for the level name
+
+    DPROPERTY("Message Text")
+    doriax::Text* messageText = nullptr;
 
     DPROPERTY("Full Heart Texture")
     std::string fullHeart = "ui/heart.png";
@@ -50,11 +59,13 @@ public:
 
 private:
     void showBanner(const std::string& text);
+    void showMessage(const std::string& text);
 
     int shownLives = -1;
     int shownScore = -1;
     std::string shownCoins;
     std::string shownGems;
     std::string shownLevel;
-    bool portalOpen = false;
+    int shownKey = -1;
+    float messageTimer = 0.0f;
 };

@@ -124,6 +124,9 @@ cppScripts:
       - name: openAnimation
         isPtr: true
         ptrTypeName: doriax::Animation
+      - name: lock
+        isPtr: true
+        ptrTypeName: doriax::Object
       - name: openSpinSpeed
         isPtr: false
   - path: scripts/Collectible.cpp
@@ -140,6 +143,7 @@ cppScripts:
 bundles:
   - bundles/Coin.bundle
   - bundles/Gem.bundle
+  - bundles/Key.bundle
   - bundles/MovingPlatform.bundle
   - bundles/Player.bundle
   - bundles/Portal.bundle
@@ -10573,6 +10577,28 @@ entities:
       bundle:
         name: Gem
         path: bundles/Gem.bundle
+  - type: Entity
+    entity: 1398
+    name: Key
+    components:
+      transform:
+        position: [39, 5.5, 3.5]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [39, 5.5, 3.5]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [39, 5.5, 3.5, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [39, 5.5, 3.5, 1]]
+        normalMatrix: [[1, 0, 0, -39], [0, 1, 0, -5.5], [0, 0, 1, -3.5], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Key
+        path: bundles/Key.bundle
   - type: Entity
     entity: 1164
     name: Saw 1

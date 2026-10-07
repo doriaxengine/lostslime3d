@@ -98,7 +98,12 @@ void PlayerController::onContactPersisted(Body3D bodyA, Body3D bodyB, Contact3D 
 
     Body3D other = isA ? bodyB : bodyA;
     Body3DComponent* otherBody = scene->findComponent<Body3DComponent>(other.getEntity());
-    if (otherBody && otherBody->sensor) return;
+    if (otherBody && otherBody->sensor) {
+        // the portal can open with the slime already inside
+        ExitPortal* portal = findScript<ExitPortal>(scene, other.getEntity(), "ExitPortal");
+        if (portal && portal->isOpen()) portal->enter();
+        return;
+    }
 
     checkGround(other, contact.getWorldSpaceNormal(), isA);
 }

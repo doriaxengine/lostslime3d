@@ -15,12 +15,14 @@ int GameState::coins = 0;
 int GameState::coinsTotal = 0;
 int GameState::gems = 0;
 int GameState::gemsTotal = 0;
+bool GameState::hasKey = false;
 bool GameState::paused = false;
 
 std::string GameState::levelName;
 std::string GameState::nextScene;
 std::string GameState::lastLevelScene;
 std::string GameState::loadingTitle;
+std::string GameState::message;
 
 bool GameState::levelCompleteRequested = false;
 bool GameState::gameOverRequested = false;
@@ -45,6 +47,8 @@ void GameState::beginLevel(const std::string& sceneName, const std::string& disp
     lastLevelScene = sceneName;
     levelName = displayName;
     nextScene = next;
+    hasKey = false;
+    message.clear();
     paused = false;
     levelCompleteRequested = false;
     gameOverRequested = false;

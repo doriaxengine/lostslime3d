@@ -15,6 +15,7 @@
 #include "Input.h"
 #include "Model.h"
 #include "ModelComponent.h"
+#include "Object.h"
 #include "PhysicsSystem.h"
 
 #include <algorithm>
@@ -146,8 +147,8 @@ void PlayerController::updateCamera(float dt) {
     Entity cameraEntity = scene->getCamera();
     if (cameraEntity == NULL_ENTITY) return;
 
-    // smoothed so landings don't shake the view
-    Vector3 focus = Body3D(scene, entity).getPosition();
+    // the drawn position, smoothed so landings don't shake the view
+    Vector3 focus = Object(scene, entity).getWorldPosition();
     if (!cameraFocusValid) {
         cameraFocus = focus;
         cameraFocusValid = true;

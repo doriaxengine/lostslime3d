@@ -12,7 +12,6 @@
 
 # Build output.
 build/
-.ci-build/
 
 # Per-developer IDE configuration.
 .vscode/

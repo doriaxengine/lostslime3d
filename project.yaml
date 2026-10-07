@@ -3,7 +3,7 @@ canvasWidth: 1280
 canvasHeight: 720
 scalingMode: fitwidth
 textureStrategy: none
-vsync: true
+vsync: false
 windowMode: windowed
 windowWidth: 1280
 windowHeight: 720

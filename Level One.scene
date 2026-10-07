@@ -18062,9 +18062,9 @@ entities:
           - 1459
         meshNodesMapping:
           - node: 0
-            entity: 1739
+            entity: 1718
           - node: 1
-            entity: 1740
+            entity: 1719
         nodesIdMapping:
           - node: 0
             entity: 1449

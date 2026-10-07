@@ -30,7 +30,7 @@ members:
               - name: starSpin
                 displayName: Star Spin
                 type: EntityReference
-                ptrTypeName: doriax::Animation
+                ptrTypeName: doriax::Action
                 value: 1001
                 defaultValue: 0
               - name: openAnimation

@@ -147,7 +147,24 @@ cppScripts:
   - path: scripts/Hazard.cpp
     headerPath: scripts/Hazard.h
     className: Hazard
+  - path: scripts/Checkpoint.cpp
+    headerPath: scripts/Checkpoint.h
+    className: Checkpoint
+    properties:
+      - name: reachAnimation
+        isPtr: true
+        ptrTypeName: doriax::Animation
+  - path: scripts/Enemy.cpp
+    headerPath: scripts/Enemy.h
+    className: Enemy
+    properties:
+      - name: stompHeight
+        isPtr: false
+      - name: scoreValue
+        isPtr: false
 bundles:
+  - bundles/Bomb.bundle
+  - bundles/Checkpoint.bundle
   - bundles/Coin.bundle
   - bundles/Gem.bundle
   - bundles/Key.bundle
@@ -11742,8 +11759,8 @@ entities:
           min: [-0.25, 0, -0.25]
           max: [0.25, 0.5, 0.25]
         worldAABB:
-          min: [26.15, 4, 2.75]
-          max: [26.65, 4.5, 3.25]
+          min: [22.65, 3, 3.75]
+          max: [23.15, 3.5, 4.25]
         receiveLights: true
         receiveIBL: false
         castShadows: true
@@ -12967,3 +12984,91 @@ entities:
         billboard: false
         fakeBillboard: false
         cylindricalBillboard: false
+  - type: Entity
+    entity: 1619
+    name: Checkpoint 1
+    components:
+      transform:
+        position: [19, 3, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [19, 3, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [19, 3, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [19, 3, 0, 1]]
+        normalMatrix: [[1, 0, 0, -19], [0, 1, 0, -3], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Checkpoint
+        path: bundles/Checkpoint.bundle
+  - type: Entity
+    entity: 1623
+    name: Checkpoint 2
+    components:
+      transform:
+        position: [37, 5, 3]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [37, 5, 3]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [37, 5, 3, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [37, 5, 3, 1]]
+        normalMatrix: [[1, 0, 0, -37], [0, 1, 0, -5], [0, 0, 1, -3], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Checkpoint
+        path: bundles/Checkpoint.bundle
+  - type: Entity
+    entity: 1629
+    name: Bomb 1
+    components:
+      transform:
+        position: [41, 5, 6.5]
+        rotation: [0.70710677, 0, 0.70710677, 0]
+        scale: [1, 1, 1]
+        worldPosition: [41, 5, 6.5]
+        worldRotation: [0.70710677, 0, 0.70710677, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[5.9604645e-08, 0, -0.99999994, 0], [0, 1, 0, 0], [0.99999994, 0, 5.9604645e-08, 0], [41, 5, 6.5, 1]]
+        modelMatrix: [[5.9604645e-08, 0, -0.99999994, 0], [0, 1, 0, 0], [0.99999994, 0, 5.9604645e-08, 0], [41, 5, 6.5, 1]]
+        normalMatrix: [[5.960465e-08, 0, -1, 6.499998], [0, 1, 0, -4.9999995], [1, 0, 5.960465e-08, -41], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Bomb
+        path: bundles/Bomb.bundle
+  - type: Entity
+    entity: 1633
+    name: Bomb 2
+    components:
+      transform:
+        position: [54, 6, 10]
+        rotation: [0.70710677, 0, 0.70710677, 0]
+        scale: [1, 1, 1]
+        worldPosition: [54, 6, 10]
+        worldRotation: [0.70710677, 0, 0.70710677, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[5.9604645e-08, 0, -0.99999994, 0], [0, 1, 0, 0], [0.99999994, 0, 5.9604645e-08, 0], [54, 6, 10, 1]]
+        modelMatrix: [[5.9604645e-08, 0, -0.99999994, 0], [0, 1, 0, 0], [0.99999994, 0, 5.9604645e-08, 0], [54, 6, 10, 1]]
+        normalMatrix: [[5.960465e-08, 0, -1, 9.999997], [0, 1, 0, -5.9999995], [1, 0, 5.960465e-08, -54.000004], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Bomb
+        path: bundles/Bomb.bundle

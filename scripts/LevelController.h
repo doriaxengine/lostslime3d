@@ -43,6 +43,8 @@ private:
     bool started = false;
     bool finished = false;
     float timer = 0.0f;
+    float finishDelay = 0.0f;
+    float musicVolume = 0.0f;
     std::string overlayScene;
     std::string loadNext;
 

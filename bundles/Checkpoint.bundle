@@ -1,0 +1,219 @@
+type: EntityBundle
+members:
+  - type: Entity
+    entity: 281
+    name: Checkpoint
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      script:
+        scripts:
+          - type: cpp
+            path: scripts/Checkpoint.cpp
+            headerPath: scripts/Checkpoint.h
+            className: Checkpoint
+            enabled: true
+            properties:
+              - name: reachAnimation
+                displayName: Reach Animation
+                type: EntityReference
+                ptrTypeName: doriax::Animation
+                value: 1003
+                defaultValue: 0
+      body3d:
+        type: static
+        motionQuality: discrete
+        sensor: true
+        gravityFactor: 1
+        buoyancy: 0
+        waterDrag: 0.5
+        waterAngularDrag: 0.01
+        allowedDOFs:
+          translationX: true
+          translationY: true
+          translationZ: true
+          rotationX: true
+          rotationY: true
+          rotationZ: true
+        numShapes: 1
+        shapes:
+          - type: box
+            position: [0, 1.1, 0]
+            rotation: [1, 0, 0, 0]
+            width: 2.4
+            height: 2.2
+            depth: 2.4
+            radius: 0.5
+            halfHeight: 0.5
+            topRadius: 0.5
+            bottomRadius: 0.5
+            density: 1000
+            source: none
+            sourceEntity: 0
+            samplesSize: 0
+            vertices: ~
+            indices: ~
+    children:
+      - type: Entity
+        entity: 282
+        name: Flag
+        components:
+          transform:
+            position: [0, 0, -0.7]
+            rotation: [1, 0, 0, 0]
+            scale: [2, 2, 2]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          mesh:
+            submeshes:
+              - material:
+                  baseColorFactor: [0.325, 0.325, 0.325, 1]
+                  metallicFactor: 1
+                  roughnessFactor: 1
+                  alphaCutoff: 0.5
+                  foliageTransmission: 0
+                  alphaMode: AUTO
+                  emissiveFactor: [0, 0, 0]
+                  baseColorTexCoord: 0
+                  metallicRoughnessTexCoord: 0
+                  occlusionTexCoord: 0
+                  emissiveTexCoord: 0
+                  normalTexCoord: 0
+                  name: ""
+                textureRect: [0, 0, 1, 1]
+                primitiveType: triangles
+                vertexCount: 0
+                faceCulling: true
+                textureShadow: false
+                overrideFields: 1
+                hasTexCoord1: false
+                hasTexCoord2: false
+                hasNormalMap: false
+                hasTangent: false
+                hasVertexColor3: false
+                hasVertexColor4: false
+                hasTextureRect: false
+                hasSkinning: false
+                hasMorphTarget: false
+                hasMorphNormal: false
+                hasMorphTangent: false
+            normAdjustJoint: 1
+            normAdjustWeight: 1
+            aabb:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            verticesAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            worldAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            receiveLights: true
+            receiveIBL: false
+            castShadows: true
+            receiveShadows: true
+            lodEnabled: true
+            lodBias: 1
+            renderInReflectionProbes: true
+            shadowsBillboard: true
+            transparent: false
+            cullingMode: back
+            windingOrder: ccw
+          model:
+            filename: models/flag.glb
+            skeleton: 0
+  - type: Entity
+    entity: 1001
+    name: Reach Tint
+    components:
+      action:
+        state: Stopped
+        speed: 1
+        startOffset: 0
+        randomStart: false
+        target: 282
+        ownedTarget: false
+      timedaction:
+        duration: 0.6
+        loop: false
+        pingPong: false
+        function: SINE_OUT
+      coloraction:
+        endColor: [1, 1, 1]
+        startColor: [0.6, 0.6, 0.6]
+        useSRGB: true
+  - type: Entity
+    entity: 1002
+    name: Flag Pop
+    components:
+      action:
+        state: Stopped
+        speed: 1
+        startOffset: 0
+        randomStart: false
+        target: 282
+        ownedTarget: false
+      keyframetracks:
+        index: 0
+        interpolation: 0
+        loop: false
+        relative: false
+        times:
+          - 0
+          - 0.25
+          - 0.6
+        easings:
+          - QUAD_OUT
+          - QUAD_IN_OUT
+      scaletracks:
+        values:
+          - [2, 2, 2]
+          - [2.6, 2.6, 2.6]
+          - [2, 2, 2]
+  - type: Entity
+    entity: 1003
+    name: Reach
+    components:
+      action:
+        state: Stopped
+        speed: 1
+        startOffset: 0
+        randomStart: false
+        target: 0
+        ownedTarget: false
+      animation:
+        loop: false
+        duration: -1
+        ownedActions: false
+        defaultFadeTime: 0.15
+        actions:
+          - track: 0
+            startTime: 0
+            duration: 0
+            action: 1001
+          - track: 1
+            startTime: 0
+            duration: 0
+            action: 1002

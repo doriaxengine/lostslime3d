@@ -16,6 +16,8 @@ int GameState::coinsTotal = 0;
 int GameState::gems = 0;
 int GameState::gemsTotal = 0;
 bool GameState::hasKey = false;
+bool GameState::hasCheckpoint = false;
+Vector3 GameState::checkpoint;
 bool GameState::paused = false;
 
 std::string GameState::levelName;
@@ -48,6 +50,7 @@ void GameState::beginLevel(const std::string& sceneName, const std::string& disp
     levelName = displayName;
     nextScene = next;
     hasKey = false;
+    hasCheckpoint = false;
     message.clear();
     paused = false;
     levelCompleteRequested = false;

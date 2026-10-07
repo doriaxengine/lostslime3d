@@ -6,6 +6,7 @@
 #include "Entity.h"
 #include "ScriptComponent.h"
 #include "Vector2.h"
+#include "Vector3.h"
 
 struct GameState {
     static int score;
@@ -17,6 +18,8 @@ struct GameState {
     static int gems;
     static int gemsTotal;
     static bool hasKey; // opens the portal
+    static bool hasCheckpoint;
+    static doriax::Vector3 checkpoint; // where the slime respawns once a flag is reached
     static bool paused;
 
     static std::string levelName;

@@ -11,6 +11,9 @@
 #include "PhysicsSystem.h"
 #include "ActionSystem.h"
 #include "AudioSystem.h"
+#include "Sound.h"
+
+#include <algorithm>
 
 using namespace doriax;
 
@@ -42,6 +45,12 @@ void LevelController::start() {
 
     countPickups();
     setPaused(false);
+
+    Entity music = scene->findEntity("Music");
+    if (music != NULL_ENTITY) {
+        musicVolume = Sound(scene, music).getVolume();
+        playSound(scene, "Music");
+    }
 }
 
 void LevelController::setPaused(bool paused) {
@@ -83,6 +92,7 @@ void LevelController::finish(const std::string& overlay, const std::string& next
     overlayScene = overlay;
     loadNext = next;
     timer = delay;
+    finishDelay = delay;
 }
 
 void LevelController::togglePause() {
@@ -129,13 +139,20 @@ void LevelController::onUpdate() {
 
     if (GameState::respawnRequested) {
         GameState::respawnRequested = false;
-        if (player && spawnPoint) {
-            player->respawn(spawnPoint->getWorldPosition());
+        if (player && (spawnPoint || GameState::hasCheckpoint)) {
+            player->respawn(GameState::hasCheckpoint ? GameState::checkpoint : spawnPoint->getWorldPosition());
         }
     }
 
     if (finished) {
         timer -= Engine::getDeltatime();
+
+        // the music fades out with the level
+        Entity music = scene->findEntity("Music");
+        if (music != NULL_ENTITY) {
+            Sound(scene, music).setVolume(musicVolume * std::clamp(timer / finishDelay, 0.0f, 1.0f));
+        }
+
         if (timer > 0.0f) return;
 
         if (!loadNext.empty()) {

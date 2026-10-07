@@ -8,6 +8,8 @@
 
 #include <string>
 
+class Enemy;
+
 namespace doriax {
     class Body3D;
     class Contact3D;
@@ -80,7 +82,9 @@ public:
 private:
     void checkGround(doriax::Body3D& other, const doriax::Vector3& normal, bool isA);
     void touch(doriax::Entity other);
+    void touchEnemy(Enemy* enemy, doriax::Entity other);
     void hurt();
+    void setModelVisible(bool visible);
     void updateCamera(float dt);
     void updateAnimation(bool moving, bool sprinting);
     void play(const std::string& name, bool loop);
@@ -99,6 +103,8 @@ private:
     float coyoteTimer = 0.0f;
     float jumpBufferTimer = 0.0f;
     float hurtTimer = 0.0f;
+    float blinkTimer = 0.0f;
+    bool stompPending = false;
     bool jumpHeld = false;
     bool jumpCutPending = false;
     bool grounded = false;

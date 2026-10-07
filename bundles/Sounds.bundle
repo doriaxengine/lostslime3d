@@ -168,3 +168,66 @@ members:
         attenuationModel: no_attenuation
         attenuationRolloffFactor: 1
         dopplerFactor: 1
+  - type: Entity
+    entity: 249
+    name: Music
+    components:
+      sound:
+        state: stopped
+        filename: audio/music.ogg
+        enableClocked: false
+        volume: 0.3
+        speed: 1
+        pan: 0
+        looping: true
+        loopingPoint: 0
+        protectVoice: true
+        inaudibleBehaviorMustTick: false
+        inaudibleBehaviorKill: false
+        minDistance: 1
+        maxDistance: 1000
+        attenuationModel: no_attenuation
+        attenuationRolloffFactor: 1
+        dopplerFactor: 1
+  - type: Entity
+    entity: 250
+    name: Squash Sound
+    components:
+      sound:
+        state: stopped
+        filename: audio/squash.ogg
+        enableClocked: false
+        volume: 0.7
+        speed: 1
+        pan: 0
+        looping: false
+        loopingPoint: 0
+        protectVoice: false
+        inaudibleBehaviorMustTick: false
+        inaudibleBehaviorKill: false
+        minDistance: 1
+        maxDistance: 1000
+        attenuationModel: no_attenuation
+        attenuationRolloffFactor: 1
+        dopplerFactor: 1
+  - type: Entity
+    entity: 251
+    name: Checkpoint Sound
+    components:
+      sound:
+        state: stopped
+        filename: audio/key.ogg
+        enableClocked: false
+        volume: 0.6
+        speed: 1
+        pan: 0
+        looping: false
+        loopingPoint: 0
+        protectVoice: false
+        inaudibleBehaviorMustTick: false
+        inaudibleBehaviorKill: false
+        minDistance: 1
+        maxDistance: 1000
+        attenuationModel: no_attenuation
+        attenuationRolloffFactor: 1
+        dopplerFactor: 1

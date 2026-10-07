@@ -1,0 +1,180 @@
+type: EntityBundle
+members:
+  - type: Entity
+    entity: 301
+    name: Bomb
+    components:
+      transform:
+        position: [0, 0, 0]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [0, 0, 0]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      script:
+        scripts:
+          - type: cpp
+            path: scripts/Enemy.cpp
+            headerPath: scripts/Enemy.h
+            className: Enemy
+            enabled: true
+            properties:
+              - name: stompHeight
+                displayName: Stomp Height
+                type: Float
+                value: 0.35
+                defaultValue: 0.35
+              - name: scoreValue
+                displayName: Score Value
+                type: Int
+                value: 50
+                defaultValue: 50
+      body3d:
+        type: kinematic
+        motionQuality: discrete
+        sensor: true
+        gravityFactor: 1
+        buoyancy: 0
+        waterDrag: 0.5
+        waterAngularDrag: 0.01
+        allowedDOFs:
+          translationX: true
+          translationY: true
+          translationZ: true
+          rotationX: true
+          rotationY: true
+          rotationZ: true
+        numShapes: 1
+        shapes:
+          - type: sphere
+            position: [0, 0.38, 0]
+            rotation: [1, 0, 0, 0]
+            width: 1
+            height: 1
+            depth: 1
+            radius: 0.38
+            halfHeight: 0.5
+            topRadius: 0.5
+            bottomRadius: 0.5
+            density: 1000
+            source: none
+            sourceEntity: 0
+            samplesSize: 0
+            vertices: ~
+            indices: ~
+    children:
+      - type: Entity
+        entity: 302
+        name: Visual
+        components:
+          transform:
+            position: [0, 0, 0]
+            rotation: [1, 0, 0, 0]
+            scale: [1.4, 1.4, 1.4]
+            worldPosition: [0, 0, 0]
+            worldRotation: [1, 0, 0, 0]
+            worldScale: [1, 1, 1]
+            localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            normalMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+            visible: true
+            billboardRotation: [1, 0, 0, 0]
+            billboard: false
+            fakeBillboard: false
+            cylindricalBillboard: false
+          mesh:
+            submeshes: ~
+            normAdjustJoint: 1
+            normAdjustWeight: 1
+            aabb:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            verticesAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            worldAABB:
+              min: [0, 0, 0]
+              max: [0, 0, 0]
+            receiveLights: true
+            receiveIBL: false
+            castShadows: true
+            receiveShadows: true
+            lodEnabled: true
+            lodBias: 1
+            renderInReflectionProbes: true
+            shadowsBillboard: true
+            transparent: false
+            cullingMode: back
+            windingOrder: ccw
+          model:
+            filename: models/bomb.glb
+            skeleton: 0
+  - type: Entity
+    entity: 1001
+    name: Patrol Path
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 0
+        randomStart: true
+        target: 301
+        ownedTarget: false
+      timedaction:
+        duration: 2.2
+        loop: true
+        pingPong: true
+        function: SINE_IN_OUT
+      positionaction:
+        endPosition: [1.5, 0, 0]
+        startPosition: [-1.5, 0, 0]
+  - type: Entity
+    entity: 1002
+    name: Waddle
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 0
+        randomStart: true
+        target: 302
+        ownedTarget: false
+      timedaction:
+        duration: 0.28
+        loop: true
+        pingPong: true
+        function: SINE_IN_OUT
+      rotationaction:
+        endRotation: [0.996195, 0.087156, 0, 0]
+        startRotation: [0.996195, -0.087156, 0, 0]
+        shortestPath: true
+        spin: false
+        axis: [1, 0, 0]
+        angle: 0
+  - type: Entity
+    entity: 1003
+    name: Hop
+    components:
+      action:
+        state: Running
+        speed: 1
+        startOffset: 0
+        randomStart: true
+        target: 302
+        ownedTarget: false
+      timedaction:
+        duration: 0.14
+        loop: true
+        pingPong: true
+        function: QUAD_OUT
+      positionaction:
+        endPosition: [0, 0.07, 0]
+        startPosition: [0, 0, 0]

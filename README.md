@@ -51,4 +51,4 @@ Jingles and New Platformer Pack (the key icon and sounds). The Titan One and Sni
 under the SIL Open Font License. Licenses are in `assets/licenses/`.
 
 The logo, the HUD icons (renders of Platformer Kit models) and the dust puff model were made
-for this game and are CC0 as well.
+for this game and are CC0 as well. The music was made for Lost Slime and is CC0 too.

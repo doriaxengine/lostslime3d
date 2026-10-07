@@ -146,7 +146,24 @@ cppScripts:
         isPtr: false
       - name: scoreValue
         isPtr: false
+  - path: scripts/Checkpoint.cpp
+    headerPath: scripts/Checkpoint.h
+    className: Checkpoint
+    properties:
+      - name: reachAnimation
+        isPtr: true
+        ptrTypeName: doriax::Animation
+  - path: scripts/Enemy.cpp
+    headerPath: scripts/Enemy.h
+    className: Enemy
+    properties:
+      - name: stompHeight
+        isPtr: false
+      - name: scoreValue
+        isPtr: false
 bundles:
+  - bundles/Bomb.bundle
+  - bundles/Checkpoint.bundle
   - bundles/Coin.bundle
   - bundles/Gem.bundle
   - bundles/Key.bundle
@@ -206,7 +223,7 @@ entities:
         automaticShadowCamera: true
         shadowBias: 0.0022
         mapResolution: 2048
-        shadowCameraNearFar: [0.2, 200]
+        shadowCameraNearFar: [0.3, 200]
         numShadowCascades: 4
   - type: Entity
     entity: 1003
@@ -16015,15 +16032,15 @@ entities:
     name: Coin 1
     components:
       transform:
-        position: [4, 1.5, 0]
+        position: [6.5, 1.5, 1]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [4, 1.5, 0]
+        worldPosition: [6.5, 1.5, 1]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [4, 1.5, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [4, 1.5, 0, 1]]
-        normalMatrix: [[1, 0, 0, -4], [0, 1, 0, -1.5], [0, 0, 1, 0], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [6.5, 1.5, 1, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [6.5, 1.5, 1, 1]]
+        normalMatrix: [[1, 0, 0, -6.5], [0, 1, 0, -1.5], [0, 0, 1, -1], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false
@@ -20502,3 +20519,69 @@ entities:
         billboard: false
         fakeBillboard: false
         cylindricalBillboard: false
+  - type: Entity
+    entity: 1951
+    name: Checkpoint 1
+    components:
+      transform:
+        position: [29.5, 3, 1]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [29.5, 3, 1]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [29.5, 3, 1, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [29.5, 3, 1, 1]]
+        normalMatrix: [[1, 0, 0, -29.5], [0, 1, 0, -3], [0, 0, 1, -1], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Checkpoint
+        path: bundles/Checkpoint.bundle
+  - type: Entity
+    entity: 1955
+    name: Bomb 1
+    components:
+      transform:
+        position: [28.5, 3, 5]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [28.5, 3, 5]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [28.5, 3, 5, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [28.5, 3, 5, 1]]
+        normalMatrix: [[1, 0, 0, -28.5], [0, 1, 0, -3], [0, 0, 1, -5], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Bomb
+        path: bundles/Bomb.bundle
+  - type: Entity
+    entity: 1959
+    name: Bomb 2
+    components:
+      transform:
+        position: [47.5, 5, 10.5]
+        rotation: [1, 0, 0, 0]
+        scale: [1, 1, 1]
+        worldPosition: [47.5, 5, 10.5]
+        worldRotation: [1, 0, 0, 0]
+        worldScale: [1, 1, 1]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [47.5, 5, 10.5, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [47.5, 5, 10.5, 1]]
+        normalMatrix: [[1, 0, 0, -47.5], [0, 1, 0, -5], [0, 0, 1, -10.5], [0, 0, 0, 1]]
+        visible: true
+        billboardRotation: [1, 0, 0, 0]
+        billboard: false
+        fakeBillboard: false
+        cylindricalBillboard: false
+      bundle:
+        name: Bomb
+        path: bundles/Bomb.bundle

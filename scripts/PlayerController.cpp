@@ -4,6 +4,8 @@
 #include "Collectible.h"
 #include "ExitPortal.h"
 #include "Hazard.h"
+#include "Checkpoint.h"
+#include "Enemy.h"
 
 #include "Angle.h"
 #include "Animation.h"
@@ -15,6 +17,7 @@
 #include "Input.h"
 #include "Model.h"
 #include "ModelComponent.h"
+#include "MeshComponent.h"
 #include "Object.h"
 #include "PhysicsSystem.h"
 
@@ -27,6 +30,8 @@ static const float DEADZONE = 0.2f;
 static const float GROUND_NORMAL_Y = 0.64f; // slopes up to ~50 degrees
 static const float LEAVING_SPEED = 1.0f; // away from the ground, like a jump taking off
 static const float LANDING_SPEED = 2.0f; // slower falls land quietly
+static const float STOMP_BOUNCE = 7.0f;
+static const float BLINK_TIME = 1.2f; // the respawn and the time it can't be hurt again
 
 PlayerController::PlayerController(Scene* scene, Entity entity): ScriptBase(scene, entity) {
     physics = scene->getSystem<PhysicsSystem>().get();
@@ -118,6 +123,26 @@ void PlayerController::touch(Entity other) {
         hurt();
     } else if (ExitPortal* portal = findScript<ExitPortal>(scene, other, "ExitPortal")) {
         portal->enter();
+    } else if (Checkpoint* checkpoint = findScript<Checkpoint>(scene, other, "Checkpoint")) {
+        checkpoint->reach();
+    } else if (Enemy* enemy = findScript<Enemy>(scene, other, "Enemy")) {
+        touchEnemy(enemy, other);
+    }
+}
+
+// falling on it from above squashes it, any other touch hurts
+void PlayerController::touchEnemy(Enemy* enemy, Entity other) {
+    if (enemy->isSquashed()) return;
+
+    Body3D body(scene, entity);
+    float top = Object(scene, other).getWorldPosition().y + enemy->stompHeight;
+    if (body.getLinearVelocity().y < 0.0f && body.getPosition().y > top) {
+        enemy->squash();
+        stompPending = true;
+        GameState::score += enemy->scoreValue;
+        playSound(scene, "Squash Sound");
+    } else {
+        hurt();
     }
 }
 
@@ -126,6 +151,7 @@ void PlayerController::hurt() {
     hurtTimer = 1.0f;
 
     playSound(scene, "Hurt Sound");
+    blinkTimer = BLINK_TIME;
     GameState::lives--;
     if (GameState::lives <= 0) {
         dead = true;
@@ -154,6 +180,18 @@ void PlayerController::respawn(Vector3 position) {
     currentAnim.clear();
 }
 
+// the slime's meshes, not the dust it kicks up
+void PlayerController::setModelVisible(bool visible) {
+    Entity dustTarget = dust ? dust->getTarget() : NULL_ENTITY;
+    auto meshes = scene->getComponentArray<MeshComponent>();
+    for (size_t i = 0; i < meshes->size(); i++) {
+        Entity mesh = meshes->getEntity(i);
+        if (mesh != dustTarget && (mesh == entity || scene->isParentOf(entity, mesh))) {
+            Object(scene, mesh).setVisibleOnly(visible);
+        }
+    }
+}
+
 void PlayerController::updateCamera(float dt) {
     Entity cameraEntity = scene->getCamera();
     if (cameraEntity == NULL_ENTITY) return;
@@ -164,7 +202,7 @@ void PlayerController::updateCamera(float dt) {
         cameraFocus = focus;
         cameraFocusValid = true;
     } else {
-        cameraFocus = cameraFocus + (focus - cameraFocus) * std::min(cameraLag * dt, 1.0f);
+        cameraFocus = cameraFocus + (focus - cameraFocus) * (1.0f - std::exp(-cameraLag * dt));
     }
 
     Quaternion rotation;
@@ -211,6 +249,12 @@ void PlayerController::onUpdate() {
 
     Body3D body(scene, entity);
     if (hurtTimer > 0.0f) hurtTimer -= dt;
+
+    // blinks while it can't be hurt again
+    if (blinkTimer > 0.0f) {
+        blinkTimer -= dt;
+        setModelVisible(blinkTimer <= 0.0f || std::fmod(blinkTimer, 0.2f) > 0.1f);
+    }
 
     int pad = Input::numGamepads() > 0 ? Input::getGamepadId(0) : -1;
     bool hasPad = pad != -1 && Input::isGamepadConnected(pad);
@@ -316,13 +360,22 @@ void PlayerController::onUpdate() {
 
     Vector3 velocity = body.getLinearVelocity();
 
+    if (stompPending) {
+        stompPending = false;
+        velocity.y = STOMP_BOUNCE;
+        coyoteTimer = 0.0f;
+        grounded = false;
+        emitDust();
+    }
+
     // letting go of jump early makes a short hop
     if (jumpCutPending && !jumpHeld) {
         jumpCutPending = false;
         if (velocity.y > 0.0f) velocity.y *= jumpCut;
     }
 
-    Vector3 target = moving ? direction * (sprinting ? sprintSpeed : moveSpeed) : Vector3::ZERO;
+    // running is kept on the ground, so a running jump still lands on the small islands
+    Vector3 target = moving ? direction * (sprinting && grounded ? sprintSpeed : moveSpeed) : Vector3::ZERO;
     if (onMovingGround) target = target + groundVelocity;
 
     float blend = std::min((grounded ? acceleration : acceleration * airControl) * dt, 1.0f);

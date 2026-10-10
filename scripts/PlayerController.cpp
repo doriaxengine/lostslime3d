@@ -275,7 +275,7 @@ void PlayerController::onUpdate() {
         float lookX = Input::getGamepadAxis(pad, D_GAMEPAD_AXIS_RIGHT_X);
         float lookY = Input::getGamepadAxis(pad, D_GAMEPAD_AXIS_RIGHT_Y);
         if (std::fabs(lookX) > DEADZONE) yaw -= lookX * 130.0f * dt;
-        if (std::fabs(lookY) > DEADZONE) pitch += lookY * 130.0f * dt;
+        if (std::fabs(lookY) > DEADZONE) pitch -= lookY * 130.0f * dt;
     }
     if (Input::isKeyPressed(D_KEY_Q)) yaw += 90.0f * dt;
     if (Input::isKeyPressed(D_KEY_E)) yaw -= 90.0f * dt;

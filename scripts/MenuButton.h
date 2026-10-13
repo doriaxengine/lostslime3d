@@ -17,6 +17,10 @@ public:
     virtual ~MenuButton();
 
     void onPress();
+    void onUpdate();
 
     static void runAction(doriax::Scene* scene, const std::string& action, const std::string& targetScene);
+
+private:
+    bool started = false;
 };

@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    uses: doriaxengine/doriax-project-example-ci/.github/workflows/build-project.yml@v2
+    uses: doriaxengine/doriax-project-example-ci/.github/workflows/build-project.yml@v3
     with:
       title: Lost Slime 3D
       subtitle: Pick up every coin to open the portal and find the hidden gems.

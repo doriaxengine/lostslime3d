@@ -20524,15 +20524,15 @@ entities:
     name: Checkpoint 1
     components:
       transform:
-        position: [29.5, 3, 1]
+        position: [29.5, 3, 2]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [29.5, 3, 1]
+        worldPosition: [29.5, 3, 2]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [29.5, 3, 1, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [29.5, 3, 1, 1]]
-        normalMatrix: [[1, 0, 0, -29.5], [0, 1, 0, -3], [0, 0, 1, -1], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [29.5, 3, 2, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [29.5, 3, 2, 1]]
+        normalMatrix: [[1, 0, 0, -29.5], [0, 1, 0, -3], [0, 0, 1, -2], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false

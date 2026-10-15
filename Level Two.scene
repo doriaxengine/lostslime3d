@@ -12989,15 +12989,15 @@ entities:
     name: Checkpoint 1
     components:
       transform:
-        position: [19, 3, 0]
+        position: [19.75, 3, 1]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [19, 3, 0]
+        worldPosition: [19.75, 3, 1]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [19, 3, 0, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [19, 3, 0, 1]]
-        normalMatrix: [[1, 0, 0, -19], [0, 1, 0, -3], [0, 0, 1, 0], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [19.75, 3, 1, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [19.75, 3, 1, 1]]
+        normalMatrix: [[1, 0, 0, -19.75], [0, 1, 0, -3], [0, 0, 1, -1], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false
@@ -13011,15 +13011,15 @@ entities:
     name: Checkpoint 2
     components:
       transform:
-        position: [37, 5, 3]
+        position: [37.75, 5, 4]
         rotation: [1, 0, 0, 0]
         scale: [1, 1, 1]
-        worldPosition: [37, 5, 3]
+        worldPosition: [37.75, 5, 4]
         worldRotation: [1, 0, 0, 0]
         worldScale: [1, 1, 1]
-        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [37, 5, 3, 1]]
-        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [37, 5, 3, 1]]
-        normalMatrix: [[1, 0, 0, -37], [0, 1, 0, -5], [0, 0, 1, -3], [0, 0, 0, 1]]
+        localMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [37.75, 5, 4, 1]]
+        modelMatrix: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [37.75, 5, 4, 1]]
+        normalMatrix: [[1, 0, 0, -37.75], [0, 1, 0, -5], [0, 0, 1, -4], [0, 0, 0, 1]]
         visible: true
         billboardRotation: [1, 0, 0, 0]
         billboard: false

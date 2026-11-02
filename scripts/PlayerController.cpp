@@ -187,7 +187,7 @@ void PlayerController::setModelVisible(bool visible) {
     for (size_t i = 0; i < meshes->size(); i++) {
         Entity mesh = meshes->getEntity(i);
         if (mesh != dustTarget && (mesh == entity || scene->isParentOf(entity, mesh))) {
-            Object(scene, mesh).setVisibleOnly(visible);
+            Object(scene, mesh).setVisible(visible);
         }
     }
 }

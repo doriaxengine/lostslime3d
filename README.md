@@ -18,6 +18,7 @@ Open the folder in Doriax Editor and press **Play** on `Intro Scene`.
 | Shift, gamepad X | Run |
 | Drag the mouse, Q / E, gamepad right stick | Turn the camera |
 | Esc / P, gamepad Start | Pause |
+| Arrows, gamepad d-pad or stick | Menu selection |
 | Enter, gamepad A | Menu confirm |
 
 On phones and tablets the level shows on-screen controls instead: a stick (push it all the way

@@ -44,6 +44,7 @@ public:
 
 private:
     void show();
+    void focusPrimaryButton();
 
     bool shown = false;
     bool armed = false;

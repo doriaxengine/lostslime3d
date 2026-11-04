@@ -44,6 +44,23 @@ void MenuController::onUpdate() {
     if (!armed) {
         armTimer += Engine::getDeltatime();
         armed = armTimer > 0.3f;
+        if (armed) focusPrimaryButton();
+    }
+}
+
+// keys and gamepads start on the button of the primary action
+void MenuController::focusPrimaryButton() {
+    auto scripts = scene->getComponentArray<ScriptComponent>();
+    for (size_t i = 0; i < scripts->size(); i++) {
+        for (auto& entry : scripts->getComponentFromIndex(i).scripts) {
+            if (entry.type == ScriptType::LUA || entry.className != "MenuButton" || !entry.instance) continue;
+
+            MenuButton* button = static_cast<MenuButton*>(entry.instance);
+            if (button->action == primaryAction) {
+                button->setFocus();
+                return;
+            }
+        }
     }
 }
 

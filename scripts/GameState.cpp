@@ -67,6 +67,8 @@ void GameState::loadScene(const std::string& sceneName){
     if (level) levelStartScore = score;
     loadingTitle = level ? sceneName : "";
     levelName.clear();
+    // the key stays with the level left, or the next portal opens before its level starts
+    hasKey = false;
     SceneManager::loadScene(sceneName);
 }
 

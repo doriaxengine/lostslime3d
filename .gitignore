@@ -16,6 +16,7 @@ build/
 .vscode/
 .idea/
 *.user
+CMakeUserPresets.json
 
 # Written by the game while it runs, Play mode included.
 UserSettings.xml

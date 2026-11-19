@@ -12,6 +12,7 @@
 #include "Body3D.h"
 #include "Body3DComponent.h"
 #include "Camera.h"
+#include "Collider3D.h"
 #include "Contact3D.h"
 #include "Engine.h"
 #include "Input.h"
@@ -65,7 +66,7 @@ void PlayerController::play(const std::string& name, bool loop) {
 }
 
 // the contact normal points from A to B
-void PlayerController::checkGround(Body3D& other, const Vector3& normal, bool isA) {
+void PlayerController::checkGround(Collider3D& other, const Vector3& normal, bool isA) {
     Vector3 up = isA ? -normal : normal;
     if (up.y < GROUND_NORMAL_Y) return;
 
@@ -83,11 +84,11 @@ void PlayerController::checkGround(Body3D& other, const Vector3& normal, bool is
     }
 }
 
-void PlayerController::onContactAdded(Body3D bodyA, Body3D bodyB, Contact3D contact) {
+void PlayerController::onContactAdded(Collider3D bodyA, Collider3D bodyB, Contact3D contact) {
     bool isA = bodyA.getEntity() == entity;
     if (!isA && bodyB.getEntity() != entity) return;
 
-    Body3D other = isA ? bodyB : bodyA;
+    Collider3D other = isA ? bodyB : bodyA;
     Body3DComponent* otherBody = scene->findComponent<Body3DComponent>(other.getEntity());
     if (otherBody && otherBody->sensor) {
         touch(other.getEntity());
@@ -97,11 +98,11 @@ void PlayerController::onContactAdded(Body3D bodyA, Body3D bodyB, Contact3D cont
     checkGround(other, contact.getWorldSpaceNormal(), isA);
 }
 
-void PlayerController::onContactPersisted(Body3D bodyA, Body3D bodyB, Contact3D contact) {
+void PlayerController::onContactPersisted(Collider3D bodyA, Collider3D bodyB, Contact3D contact) {
     bool isA = bodyA.getEntity() == entity;
     if (!isA && bodyB.getEntity() != entity) return;
 
-    Body3D other = isA ? bodyB : bodyA;
+    Collider3D other = isA ? bodyB : bodyA;
     Body3DComponent* otherBody = scene->findComponent<Body3DComponent>(other.getEntity());
     if (otherBody && otherBody->sensor) {
         // the portal can open with the slime already inside

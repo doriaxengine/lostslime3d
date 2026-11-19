@@ -11,7 +11,7 @@
 class Enemy;
 
 namespace doriax {
-    class Body3D;
+    class Collider3D;
     class Contact3D;
     class PhysicsSystem;
 }
@@ -73,14 +73,14 @@ public:
     virtual ~PlayerController();
 
     void onUpdate();
-    void onContactAdded(doriax::Body3D bodyA, doriax::Body3D bodyB, doriax::Contact3D contact);
-    void onContactPersisted(doriax::Body3D bodyA, doriax::Body3D bodyB, doriax::Contact3D contact);
+    void onContactAdded(doriax::Collider3D bodyA, doriax::Collider3D bodyB, doriax::Contact3D contact);
+    void onContactPersisted(doriax::Collider3D bodyA, doriax::Collider3D bodyB, doriax::Contact3D contact);
 
     void respawn(doriax::Vector3 position);
     bool isDead() const { return dead; }
 
 private:
-    void checkGround(doriax::Body3D& other, const doriax::Vector3& normal, bool isA);
+    void checkGround(doriax::Collider3D& other, const doriax::Vector3& normal, bool isA);
     void touch(doriax::Entity other);
     void touchEnemy(Enemy* enemy, doriax::Entity other);
     void hurt();

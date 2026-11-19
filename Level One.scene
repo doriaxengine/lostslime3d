@@ -52,6 +52,12 @@ shaderKeys:
     properties: 33567070
   - type: mesh
     properties: 33820760
+  - type: mesh
+    properties: 301994330
+  - type: mesh
+    properties: 302002526
+  - type: mesh
+    properties: 302256216
   - type: sky
   - type: depth
   - type: depth
